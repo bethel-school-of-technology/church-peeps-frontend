@@ -26,11 +26,11 @@ class App extends Component {
     super(props);
 
     this.state = {
-      firstName: [],
-      lastName: [],
-      address: [],
-      email: [],
-      password: [],
+      firstName: "",
+      lastName: "",
+      address: "",
+      email: "",
+      password: "",
       formErrors: {
         firstName: "",
         lastName: "",
@@ -112,7 +112,7 @@ class App extends Component {
     return (
       <div className="wrapper">
         <div className="form-wrapper">
-          <h1>Create Account</h1>
+          <h1>Profile Info</h1>
           <form onSubmit={this.handlesubmit} noValidate>
             <div className="firstName">
               <label htmlFor="firstName">First Name</label>
@@ -190,7 +190,7 @@ class App extends Component {
             </div>
 
             <div className="createAccount">
-              <button type="submit">Create Account</button>
+              <button type="submit">Profile Page</button>
               <small>Already Have An Account?</small>
             </div>
           </form>
