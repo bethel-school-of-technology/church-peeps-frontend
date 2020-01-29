@@ -2,12 +2,14 @@ import React from "react";
 
 import "./App.css";
 
-function Profile() {
+
+
+function Login() {
   return (
     <div>
-      <h1>Profile Page</h1>
+      <h1>Login Page</h1>
     </div>
   );
 }
 
-export default Profile;
+export default Login;
