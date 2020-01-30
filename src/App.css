@@ -7,8 +7,9 @@ nav{
   justify-content: space-round;
   align-items: center;
   min-height: 10vh;
-  background: navy;
+  background: rgba(1, 28, 146, 0.884);
   color: white;  
+  justify-content: center;
 }
 
 .nav-links {
@@ -18,3 +19,30 @@ nav{
   align-items: center;
   list-style: none;
 }
+
+.signup {
+  margin: 15px;
+  padding: 5px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.container {
+  margin: 10px;
+  padding: 10px;
+  justify-self: right;
+}
+
+.user, .pass, .login, .em, .first, .last {
+  margin: 5px 0px 0px;
+  padding: 10px 0px 0px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.firstName, .lastName, .email, .username, .password {
+  background-color: rgb(231, 231, 221);
+  margin: 5px;
+  padding: 5px;
+  font-family: 'Arial Narrow Bold', sans-serif;
+  font-size: 1.025em;
+ 
+}
+
