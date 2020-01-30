@@ -6,21 +6,21 @@ import Home from './Home';
 import Profile from './Profile';
 import Prayer from './Prayer';
 import Login from './login';
-// import Signup from './Signup/Signup';
+import Signup from './Signup';
 
 function App() {
   return (
     <Router>
-    <div className="App">
-     <Nav />
-     <Switch>
-     <Route path="/" exact component={Home} />
-     <Route path="/profile" component={Profile} />
-     <Route path="/prayer" component={Prayer} />
-     <Route path="/login" component={Login} />
-     {/* <Route path="/signup" component={Signup} /> */}
-     </Switch>
-    </div>
+      <div className="App">
+        <Nav />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/prayer" component={Prayer} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+        </Switch>
+      </div>
     </Router>
   );
 }

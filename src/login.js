@@ -7,7 +7,23 @@ import "./App.css";
 function Login() {
   return (
     <div>
-      <h1>Login Page</h1>
+      <form>
+        <h1 class="login">Login</h1>
+        <div class="user">
+          <label>
+            Username:
+      </label>
+          <br></br>
+          <input class="username" type="text" /></div> <br></br>
+        <div class="pass">
+          <label>
+            Password:
+      </label>
+          <br></br>
+          <input class="password" type="text" />
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
     </div>
   );
 }
