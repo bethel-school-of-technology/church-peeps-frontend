@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "../App";
 
 const emailRegex = RegExp(
   /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/
@@ -28,13 +28,11 @@ class Signup extends Component {
     this.state = {
       firstName: "",
       lastName: "",
-      address: "",
       email: "",
       password: "",
       formErrors: {
         firstName: "",
         lastName: "",
-        address: "",
         email: "",
         password: ""
       }
@@ -49,7 +47,6 @@ class Signup extends Component {
         --SUBMITTING--
         First Name: ${this.state.firstName}
         Last Name: ${this.state.lastName}
-        Address: ${this.state.address}
         Email: ${this.state.email}
         Password: ${this.state.password}
       `);
@@ -76,13 +73,6 @@ class Signup extends Component {
 
       case "lastName":
         formErrors.lastName =
-          value.length < 3 && value.length > 0
-            ? "minimum 3 characters required"
-            : "";
-        break;
-
-      case "address":
-        formErrors.address =
           value.length < 3 && value.length > 0
             ? "minimum 3 characters required"
             : "";
@@ -144,20 +134,6 @@ class Signup extends Component {
               )}
             </div>
 
-{/*             <div className="address">
-              <label htmlFor="address">Address</label>
-              <input
-                className={formErrors.address.length > 0 ? "error" : null}
-                placeholder="Address"
-                text="text"
-                name="address"
-                noValidate
-                onChange={this.handleChange}
-              />
-              {formErrors.address.length > 0 && (
-                <span className="errorMessage">{formErrors.address}</span>
-              )}
-            </div> */}
 
             <div className="email">
               <label htmlFor="email">Email</label>
@@ -200,9 +176,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
-
-
-
-
-
+export default Signup;
