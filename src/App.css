@@ -2,13 +2,13 @@
   text-align: center;
 }
 
-nav{
+nav {
   display: flex;
   justify-content: space-round;
   align-items: center;
   min-height: 10vh;
   background: rgba(1, 28, 146, 0.884);
-  color: white;  
+  color: white;
   justify-content: center;
 }
 
@@ -20,11 +20,11 @@ nav{
   list-style: none;
 }
 
-.signup {
+/* .signup {
   margin: 15px;
   padding: 5px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
+} */
 
 .container {
   margin: 10px;
@@ -37,12 +37,125 @@ nav{
   padding: 10px 0px 0px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
 .firstName, .lastName, .email, .username, .password {
   background-color: rgb(231, 231, 221);
   margin: 5px;
   padding: 5px;
   font-family: 'Arial Narrow Bold', sans-serif;
   font-size: 1.025em;
- 
 }
 
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(104, 150, 235);
+}
+
+.form-wrapper {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0pc 10px 50;
+}
+
+.profileInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileInfo button {
+  background-color: rgba(40, 52, 230, 0.37);
+  border: 2px solid black;
+  width: 100%;
+  margin-top: 1em;
+  padding: 8px 0px;
+  font-size: 1em;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  margin-bottom: 0.25em;
+}
+
+.profileInfo button:hover {
+  color: rgb(0, 77, 128);
+  background-color: white;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+.profileInfo small {
+  color: black;
+  font-weight: lighter;
+}
+
+/* form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1 {
+  text-align: center;
+  width: 100%;
+  color: black;
+  font-weight: lighter;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+label {
+  font-size: 0.8em;
+  margin-bottom: 0.25em;
+  color: black;
+}
+
+input {
+  padding: 10px 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid black;
+}
+
+input::placeholder {
+  font-size: 1.2em;
+  font-weight: lighter;
+  color: black;
+}
+
+input.error {
+  border: 1px solid red;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.75em;
+  display: relative;
+}
+
+.firstName {
+  margin-right: 1%;
+}
+
+.lastName {
+  margin-left: 1%;
+} */
+
+/* .firstName, .lastName, .address, .email, .password {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.firstName, .lastName {
+  width: 49%;
+}
+
+.address, .email, .password {
+  width: 100%;
+} */
