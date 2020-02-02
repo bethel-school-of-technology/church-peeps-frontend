@@ -44,6 +44,8 @@ nav {
   padding: 5px;
   font-family: 'Arial Narrow Bold', sans-serif;
   font-size: 1.025em;
+  text-align: center;
+  justify-content: center;
 }
 
 .wrapper {
