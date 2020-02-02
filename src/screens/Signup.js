@@ -167,7 +167,9 @@ class Signup extends Component {
 
             <div className="createAccount">
               <button type="submit">Profile Page</button>
-              <small>Already Have An Account?</small>
+                <br></br>
+                <small>Already Have an <a href="./login">Account?</a></small>
+              
             </div>
           </form>
         </div>
