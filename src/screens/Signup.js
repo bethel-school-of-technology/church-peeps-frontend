@@ -48,6 +48,7 @@ class Signup extends Component {
         First Name: ${this.state.firstName}
         Last Name: ${this.state.lastName}
         Email: ${this.state.email}
+        Username: ${this.state.username}
         Password: ${this.state.password}
       `);
     } else {
@@ -84,7 +85,7 @@ class Signup extends Component {
           : "invalid email address";
         break;
 
-      case "usernme":
+      case "username":
         formErrors.username =
           value.length < 3 && value.length > 0
             ? "minimum 3 characters required"
@@ -107,9 +108,7 @@ class Signup extends Component {
   render() {
     const { formErrors } = this.state;
     return (
-      <div className="wrapper">
-        {" "}
-                
+      <div className="wrapper">   
         <div className="form-wrapper">
           <h1>Signup</h1>           
           <form onSubmit={this.handlesubmit} noValidate>
