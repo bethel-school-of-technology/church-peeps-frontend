@@ -12,7 +12,7 @@ function Prayer () {
           <p><button>Submit</button></p>
         </form>
       </div>
-    )
+    );
 }
 
 export default Prayer;
