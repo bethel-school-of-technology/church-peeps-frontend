@@ -29,11 +29,13 @@ class Signup extends Component {
       firstName: "",
       lastName: "",
       email: "",
+      username: "",
       password: "",
       formErrors: {
         firstName: "",
         lastName: "",
         email: "",
+        username: "",
         password: ""
       }
     };
@@ -48,6 +50,7 @@ class Signup extends Component {
         First Name: ${this.state.firstName}
         Last Name: ${this.state.lastName}
         Email: ${this.state.email}
+        Username: ${this.state.username}
         Password: ${this.state.password}
       `);
     } else {
@@ -83,6 +86,14 @@ class Signup extends Component {
           ? ""
           : "invalid email address";
         break;
+
+        case "username":
+        formErrors.username =
+          value.length < 3 && value.length > 0
+            ? "minimum 3 characters required"
+            : "";
+        break;
+
 
       case "password":
         formErrors.password =
@@ -149,6 +160,21 @@ class Signup extends Component {
                 <span className="errorMessage">{formErrors.error}</span>
               )}
             </div>
+
+            <div className="username">
+              <label htmlFor="username">Username</label>
+              <input
+                className={formErrors.username.length > 0 ? "error" : null}
+                placeholder="Username"
+                type="text"
+                name="username"
+                noValidate
+                onChange={this.handleChange}
+              />
+              {formErrors.username.length > 0 && (
+                <span className="errorMessage">{formErrors.username}</span>
+              )}
+            </div>
 
             <div className="password">
               <label htmlFor="password">Password</label>
