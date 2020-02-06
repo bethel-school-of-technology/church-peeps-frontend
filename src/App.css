@@ -1,30 +1,36 @@
 .App {
   text-align: center;
+ 
 }
 
 nav {
   display: flex;
-  justify-content: space-round;
-  align-items: center;
-  min-height: 10vh;
-  background: rgba(1, 28, 146, 0.884);
-  color: white;
-  justify-content: center;
-}
-
-.nav-links {
-  width: 40%;
-  display: flex;
   justify-content: space-around;
   align-items: center;
-  list-style: none;
+  min-height: 10vh;
+  background: rgba(47, 51, 66, 0.884);
+  color: white;
+  justify-content: center;
+  margin: 2em;
 }
 
-/* .signup {
-  margin: 15px;
-  padding: 5px;
+h3 {
+  margin: 7px;
+  justify-items: left;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+  list-style: none;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-} */
+
+}
+
+li {
+  margin: 10px;
+}
 
 .container {
   margin: 10px;
@@ -41,25 +47,20 @@ nav {
 .firstName, .lastName, .email, .username, .password {
   background-color: rgb(231, 231, 221);
   margin: 5px;
-  padding: 5px;
-  font-family: 'Arial Narrow Bold', sans-serif;
-  font-size: 1.025em;
-  text-align: center;
-  justify-content: center;
+  padding: 10px;
+  background-color: rgb(16, 33, 65);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: beige;
 }
 
 .wrapper {
-  height: 100vh;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background-color: rgb(104, 150, 235);
+
 }
 
 .form-wrapper {
-  width: 400px;
   display: flex;
   flex-direction: column;
   padding: 20px 40px;
@@ -72,6 +73,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .profileInfo button {
@@ -87,7 +89,7 @@ nav {
 }
 
 .profileInfo button:hover {
-  color: rgb(0, 77, 128);
+  color: rgb(32, 112, 165);
   background-color: white;
   border: 2px solid rgb(0, 0, 0);
 }
@@ -97,10 +99,14 @@ nav {
   font-weight: lighter;
 }
 
-/* form {
-  width: 100%;
+body {
   display: flex;
-  flex-wrap: wrap;
+  background-image: url("./components/images/E6476857-8F5D-48C4-9C8F-EF4B29F7612C_1_105_c.jpeg");
+
+}
+
+.home-header {
+  font-family: fantasy;
 }
 
 h1 {
@@ -111,53 +117,29 @@ h1 {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-label {
-  font-size: 0.8em;
-  margin-bottom: 0.25em;
-  color: black;
-}
 
 input {
+  margin: 10px;
   padding: 10px 10px;
   border-radius: 5px;
   outline: none;
-  border: 1px solid black;
+  border: 1px solid rgb(247, 244, 244);
 }
 
 input::placeholder {
+  margin: 5px;
+  padding: 5px;
   font-size: 1.2em;
   font-weight: lighter;
-  color: black;
+  color: rgb(20, 20, 20);
 }
 
 input.error {
   border: 1px solid red;
-}
+} 
 
-.errorMessage {
+ .errorMessage {
   color: red;
   font-size: 0.75em;
   display: relative;
 }
-
-.firstName {
-  margin-right: 1%;
-}
-
-.lastName {
-  margin-left: 1%;
-} */
-
-/* .firstName, .lastName, .address, .email, .password {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-}
-
-.firstName, .lastName {
-  width: 49%;
-}
-
-.address, .email, .password {
-  width: 100%;
-} */
