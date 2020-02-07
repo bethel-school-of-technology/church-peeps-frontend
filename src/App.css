@@ -1,22 +1,23 @@
 .App {
   text-align: center;
+  justify-content: center;
  
 }
 
 nav {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: stretch;
   min-height: 10vh;
   background: rgba(47, 51, 66, 0.884);
   color: white;
-  justify-content: center;
+  /* justify-content: center; */
   margin: 2em;
 }
 
 h3 {
   margin: 7px;
-  justify-items: left;
+  justify-items: flex-start;
 }
 
 ul {
@@ -29,19 +30,25 @@ ul {
 }
 
 li {
+  display: flex;
+  justify-content: space-around;
   margin: 10px;
+  padding: 10px;
 }
 
 .container {
   margin: 10px;
   padding: 10px;
   justify-self: right;
+  font-family: fantasy;
 }
 
 .user, .pass, .login, .em, .first, .last {
   margin: 5px 0px 0px;
   padding: 10px 0px 0px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  justify-content: center;
+  font-family: fantasy;
 }
 
 .firstName, .lastName, .email, .username, .password {
@@ -73,6 +80,7 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   
 }
 
@@ -101,18 +109,21 @@ li {
 
 body {
   display: flex;
-  background-image: url("./components/images/E6476857-8F5D-48C4-9C8F-EF4B29F7612C_1_105_c.jpeg");
-
+  /* background-image: url("./components/images/E6476857-8F5D-48C4-9C8F-EF4B29F7612C_1_105_c.jpeg"); */
+   background-image: url("./components/images/nebraska.JPG");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: 100% 100%;
 }
 
 .home-header {
   font-family: fantasy;
 }
 
-h1 {
+h1, h3 {
   text-align: center;
   width: 100%;
-  color: black;
+  color: beige;
   font-weight: lighter;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }

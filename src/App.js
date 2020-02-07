@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './App.css';
-// import "bootstrap/dist/css/bootstrap.min.css";
+import './App';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Nav from './Nav';
 import Home from './components/Home';
 import Profile from './components/Profile';
@@ -22,7 +22,7 @@ function App () {
         <Nav />
         <Switch>
           <Route path="/" exact component={Home} />
-
+    
           <Route path="/signup" component={Signup} />
           <Route path="/profile" component={Profile} />
           <Route path="/profile/edit/:id" component={EditProfile} />

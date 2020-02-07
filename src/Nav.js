@@ -10,7 +10,7 @@ function Nav() {
     <nav>      
       <ul className="nav-links">
         <Link style={navStyle} to="/">
-      <h3>Logo</h3>
+      <h3>Home</h3>
       </Link>
         <Link style={navStyle} to="/signup">
           <li>Signup</li>
