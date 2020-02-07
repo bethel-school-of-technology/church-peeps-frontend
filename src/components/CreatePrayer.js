@@ -24,10 +24,31 @@ export default class CreatePrayer extends Component {
     }
 
     componentDidMount() {
-        this.setState({
-            users: ['test user'],
-            username: 'test user'
+        axios.get('http://localhost:5000/prayer/create'+this.props.match.params.id)
+        .then(response => {
+            this.state({
+                firstName: response.data.firstName,
+                lastName: response.data.lastName,
+                description: response.data.description,
+                date: new Date(response.date.date)                
+            })
         })
+        .catch(function(error) {
+            console.log(error);
+        })
+
+        axios.get('http://localhost:5000/users/')
+        .then(response => {
+            if (response.data.length > 0) {
+                this.setState({
+                    users: response.data.map(user => user.username),
+                })
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+        
     }
 
 
@@ -62,7 +83,10 @@ export default class CreatePrayer extends Component {
             date: this.state.date
         }
 
-        console.log(prayer)
+        console.log(prayer);
+
+        axios.post('http://localhost:5000/prayer' + this.props.match.params.id, prayer)
+        .then(res => console.log(res.data));
 
         window.location = '/'
     }
