@@ -1,12 +1,12 @@
-import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-function EditPrayer() {
-    return (
-        <div>
-            <h1>You may edit or delete your prayers here.</h1>
-        </div>
-    );
+import React, { Component } from "react";
+// import "./App.css";
+export default class EditPrayer extends Component {
+    render() {
+        return (
+            <div>
+            <h3>Update Prayer Request</h3>
+            </div>
+        )
+    }
 }
-
-export default EditPrayer;
