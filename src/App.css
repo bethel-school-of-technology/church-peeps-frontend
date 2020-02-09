@@ -16,8 +16,9 @@ nav {
 }
 
 h3 {
-  margin: 7px;
+  margin: 13px;
   justify-items: flex-start;
+  
 }
 
 ul {
@@ -26,7 +27,6 @@ ul {
   margin: 10px;
   list-style: none;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
 }
 
 li {
@@ -43,20 +43,25 @@ li {
   font-family: fantasy;
 }
 
-.user, .pass, .login, .em, .first, .last {
+.user, .pass, .login, .em, .first, .last, .form-group {
   margin: 5px 0px 0px;
   padding: 10px 0px 0px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   justify-content: center;
   font-family: fantasy;
+  font-weight: bold;
 }
 
-.firstName, .lastName, .email, .username, .password {
+.firstName, .lastName, .email, .username, .password, .form-control {
   background-color: rgb(231, 231, 221);
   margin: 5px;
   padding: 10px;
   background-color: rgb(16, 33, 65);
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: beige;
+}
+.date {
+  background-color: rgb(16, 33, 65);
   color: beige;
 }
 

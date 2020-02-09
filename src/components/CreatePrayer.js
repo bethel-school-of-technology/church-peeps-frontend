@@ -10,13 +10,13 @@ export default class CreatePrayer extends Component {
 
         this.onChangefirstName = this.onChangefirstName.bind(this);
         this.onChangelastName = this.onChangelastName.bind(this);
-        this.onChangeDescription = this.onChangeDescription.bind(this);
-        this.onChangeDate = this.onChangeDate.bind(this);
+        this.onChangedescription = this.onChangedescription.bind(this);
+        this.onChangedate = this.onChangedate.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             firstName: '',
-            lastname: '',
+            lastName: '',
             description: '',
             date: new Date(),
             users: []
@@ -24,7 +24,7 @@ export default class CreatePrayer extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/prayer/create'+this.props.match.params.id)
+        axios.get('http://localhost:5000/prayer'+this.props.match.params.id)
         .then(response => {
             this.state({
                 firstName: response.data.firstName,
@@ -37,7 +37,7 @@ export default class CreatePrayer extends Component {
             console.log(error);
         })
 
-        axios.get('http://localhost:5000/users/')
+        axios.get('http://localhost:5000/prayer')
         .then(response => {
             if (response.data.length > 0) {
                 this.setState({
@@ -52,22 +52,22 @@ export default class CreatePrayer extends Component {
     }
 
 
-    onChangefirstname(e) {
+    onChangefirstName(e) {
         this.setState({
             firstName: e.target.value
         })
     }
-    onChangelastname(e) {
+    onChangelastName(e) {
         this.setState({
             lastName: e.target.value
         })
     }
-    onChangeDescription(e) {
+    onChangedescription(e) {
         this.setState({
             description: e.target.value
         })
     }
-    onChangeDate(date) {
+    onChangedate(date) {
         this.setState({
             date: date
         })
@@ -85,7 +85,7 @@ export default class CreatePrayer extends Component {
 
         console.log(prayer);
 
-        axios.post('http://localhost:5000/prayer' + this.props.match.params.id, prayer)
+        axios.post('http://localhost:5000/prayer/add' + this.props.match.params.id, prayer)
         .then(res => console.log(res.data));
 
         window.location = '/'
@@ -131,7 +131,7 @@ export default class CreatePrayer extends Component {
                         </select>
                     </div>
                     <div className="form-group">
-                        <label>New Prayer Request</label>
+                        <label>Description: </label>
                         <input type="text"
                             required
                             className="form-control"
@@ -150,11 +150,11 @@ export default class CreatePrayer extends Component {
                         </div>
 
                         <div className="form-group">
-                            <input type="submit" value="Create New Prayer Request" className="btn btn-primary" />
+                            <input type="submit" value="Create New Prayer Request" className="btn btn-secondary" />
                         </div>
             </form>
                     
                     </div>
-                )
+                );
             }
 }

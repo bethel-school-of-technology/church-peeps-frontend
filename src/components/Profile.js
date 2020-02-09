@@ -11,6 +11,7 @@ export default class Profile extends Component {
             <div>
             <h3>Profile for </h3>
             </div>
-        )
+            
+        );
     }
 }
