@@ -1,58 +1,81 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from "react";
 import axios from 'axios';
-
+import "../App"
 
 export default class CreateChurch extends Component {
     constructor(props) {
         super(props);
 
-        this.onChangeUsername = this.onChangeUsername.bind(this);
-        this.onSubmit = this.onSubmit(this);
+        this.onChangechurchName = this.onChangechurchName.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
-            username: ''
+            churchName: ''
         }
     }
+    componentDidMount() {
+        axios.get('http://localhost:5000/church'+this.props.match.params.id)
+        .then(response => {
+            this.state({
+               churchName: response.data.churchName
+            })
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
 
-    onChangeUsername(e) {
+        axios.get('http://localhost:5000/church')
+        .then(response => {
+            if (response.data.length > 0) {
+                this.setState({
+                    users: response.data.map(user => user.username),
+                })
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+        
+    }
+
+    onChangechurchName(e) {
         this.setState({
-            username: e.target.value
+            churchName: e.target.value
         })
     }
 
     onSubmit(e) {
         e.preventDefault();
         
-        const user = {
-            username: this.state.username
+        const church = {
+            churchName: this.state.churchName
         }
-        console.log(user);
+        console.log(church);
 
-        axios.post('http://localhost:5000/users/add', user)
+        axios.post('http://localhost:5000/church/admin/add' + this.props.match.params.id, church)
         .then(res => console.log(res.data));
 
-        this.setState({
-            username: ''
-        })
+        window.location = '/'
+       
     }
 
     render() {
         return (
             <div>
-            <h3>New Church</h3>
+            <h3>Create New Church</h3>
             <form onSubmit={this.onSubmit}>
                 <div className="form-group">
-                    <label>Username: </label>
+                    <label>Church Name: </label>
                     <input type="text"
                     required
                     classname="form-control"
-                    value={this.state.username}
-                    onChange={this.onChangeUsername}
+                    value={this.state.churchName}
+                    onChange={this.onChangeChurchName}
                     />
                 </div>
                 <div className="form-group">
-                    <input type="submit" value="Create Church" className="btn btn-primary" />
+                    <input type="submit" value="Create Church" className="btn btn-secondary" />
                 </div>
             </form>
             </div>
