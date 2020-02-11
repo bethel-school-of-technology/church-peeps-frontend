@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../App";
-// import axios from 'axios';
+import axios from 'axios';
 
 const emailRegex = RegExp(
   /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/
@@ -108,6 +108,83 @@ class Signup extends Component {
 
     this.setState({ formErrors, [name]: value }, () => console.log(this.state));
   };
+
+  componentDidMount() {
+    axios.get('http://localhost:5000/users'+this.props.match.params.id)
+    .then(response => {
+        this.state({
+            firstName: response.data.firstName,
+            lastName: response.data.lastName,
+            email: response.data.email,
+            username: response.data.username,
+            password: response.data.password,
+            date: new Date(response.date.date)  
+        })
+    })
+    .catch(function(error) {
+        console.log(error);
+    })
+
+    axios.get('http://localhost:5000/users')
+    .then(response => {
+        if (response.data.length > 0) {
+            this.setState({
+                users: response.data.map(user => user.username),
+            })
+        }
+    })
+    .catch((error) => {
+        console.log(error);
+    })
+    
+}
+
+onChangefirstName(e) {
+    this.setState({
+        firstName: e.target.value
+    })
+}
+onChangelastName(e) {
+    this.setState({
+        lastName: e.target.value
+    })
+}
+onChangeemail(e) {
+    this.setState({
+        email: e.target.value
+    })
+}
+onChangeusername(e) {
+  this.setState({
+    username: e.target.value
+  })
+}
+onChangepassword(e) {
+  this.setState({
+    password: e.target.value
+  })
+}
+onChangedate(date) {
+    this.setState({
+        date: date
+    })
+}
+
+onSubmit(e) {
+    e.preventDefault();
+    
+    const Signup = {
+        Signup: this.state.Signup
+    }
+    console.log();
+
+    axios.post('http://localhost:5000/users/add' + this.props.match.params.id, Signup)
+    .then(res => console.log(res.data));
+
+    window.location = '/'
+   
+}
+
 
   render() {
     const { formErrors } = this.state;
