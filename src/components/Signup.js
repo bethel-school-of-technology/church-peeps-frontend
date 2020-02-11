@@ -98,8 +98,8 @@ class Signup extends Component {
 
       case "password":
         formErrors.password =
-          value.length < 6 && value.length > 0
-            ? "minimum 6 characters required"
+          value.length < 8 && value.length > 0
+            ? "minimum 8 characters required"
             : "";
         break;
       default:

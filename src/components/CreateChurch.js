@@ -3,29 +3,27 @@ import React, { Component } from "react";
 import axios from 'axios';
 import "../App"
 
-export default class CreateChurch extends Component {
+class CreateChurch extends Component {
     constructor(props) {
         super(props);
 
-        this.onChangechurchName = this.onChangechurchName.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
-
         this.state = {
-            churchName: ''
+            title: ""
         }
-    }
+    };
+
     componentDidMount() {
         axios.get('http://localhost:5000/church'+this.props.match.params.id)
         .then(response => {
             this.state({
-               churchName: response.data.churchName
+               title: response.data.title
             })
         })
         .catch(function(error) {
             console.log(error);
         })
 
-        axios.get('http://localhost:5000/church')
+        axios.get('http://localhost:5000/users')
         .then(response => {
             if (response.data.length > 0) {
                 this.setState({
@@ -39,9 +37,9 @@ export default class CreateChurch extends Component {
         
     }
 
-    onChangechurchName(e) {
+    onChangetitle(e) {
         this.setState({
-            churchName: e.target.value
+            title: e.target.value
         })
     }
 
@@ -49,7 +47,7 @@ export default class CreateChurch extends Component {
         e.preventDefault();
         
         const church = {
-            churchName: this.state.churchName
+            title: this.state.title
         }
         console.log(church);
 
@@ -64,21 +62,20 @@ export default class CreateChurch extends Component {
         return (
             <div>
             <h3>Create New Church</h3>
-            <form onSubmit={this.onSubmit}>
-                <div className="form-group">
-                    <label>Church Name: </label>
+            <form onSubmit={this.handleSubmit} noValidate>
+                <div className="title">
+                    <label htmlFor="title">Church Name: </label>
                     <input type="text"
-                    required
-                    classname="form-control"
-                    value={this.state.churchName}
-                    onChange={this.onChangeChurchName}
+                    name="title" noValidate onChange={this.handleChange}
                     />
                 </div>
-                <div className="form-group">
-                    <input type="submit" value="Create Church" className="btn btn-secondary" />
+                <div className="church">
+                    <button type="submit"  className="btn btn-secondary">Create Church</button>
                 </div>
             </form>
             </div>
-        )
+        );
     }
 }
+
+export default CreateChurch;
