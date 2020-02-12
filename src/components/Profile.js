@@ -27,7 +27,11 @@ class Profile extends Component {
     render() {
         console.log(this.state.users);
         if (this.state.users.length ===0) {
-            return <div>Faile to fetch users</div>;
+            return <div>
+                <h3>Profile for </h3>
+                <input type="file" accept="image/*;capture=camera"></input>
+                <img src=""></img>
+            </div>;
         }
         const users = this.state.users.map(user => (
             <div key={user.UserId}>
