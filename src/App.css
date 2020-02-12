@@ -89,19 +89,22 @@ li {
   
 }
 
-.profileInfo button {
-  background-color: rgba(40, 52, 230, 0.37);
-  border: 2px solid black;
-  width: 100%;
+/* .profileInfo  */
+button {
+  background-color: rgb(209, 209, 221);
+  border: 2px solid rgb(16, 33, 65);
+  width: 25%;
   margin-top: 1em;
-  padding: 8px 0px;
+  margin-bottom: 1em;
+  padding: 5px 0px;
   font-size: 1em;
   font-weight: lighter;
   letter-spacing: 1px;
   margin-bottom: 0.25em;
 }
 
-.profileInfo button:hover {
+/* .profileInfo  */
+button:hover {
   color: rgb(32, 112, 165);
   background-color: white;
   border: 2px solid rgb(0, 0, 0);
@@ -158,4 +161,10 @@ input.error {
   color: red;
   font-size: 0.75em;
   display: relative;
+}
+small {
+  font-size: larger;
+  padding: 5px;
+  margin-top: 1em;
+  color: rgb(16, 33, 65);
 }

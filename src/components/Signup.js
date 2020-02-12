@@ -270,7 +270,7 @@ onSubmit(e) {
             </div>
 
             <div className="createAccount">
-              <button type="submit">Profile Page</button>
+              <button type="submit">Sign Up</button>
               <br></br>
               <small>Already Have an <a href="./login">Account?</a></small>
 
