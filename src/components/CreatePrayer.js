@@ -20,35 +20,35 @@ export default class CreatePrayer extends Component {
             description: '',
             date: new Date(),
             users: []
-        }
+        };
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/prayer'+this.props.match.params.id)
-        .then(response => {
-            this.state({
-                firstName: response.data.firstName,
-                lastName: response.data.lastName,
-                description: response.data.description,
-                date: new Date(response.date.date)                
-            })
-        })
-        .catch(function(error) {
-            console.log(error);
-        })
+        // axios.get('http://localhost:5000/prayer')
+        // .then(response => {
+        //     this.state({
+        //         firstName: response.data.firstName,
+        //         lastName: response.data.lastName,
+        //         description: response.data.description,
+        //         date: new Date(response.date.date)                
+        //     })
+        // })
+        // .catch(function(error) {
+        //     console.log(error);
+        // })
 
         axios.get('http://localhost:5000/prayer')
-        .then(response => {
-            if (response.data.length > 0) {
-                this.setState({
-                    users: response.data.map(user => user.username),
-                })
-            }
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-        
+            .then(response => {
+                if (response.data.length > 0) {
+                    this.setState({
+                        users: response.data.map(user => user.firstName),
+                    });
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
     }
 
 
@@ -85,17 +85,17 @@ export default class CreatePrayer extends Component {
 
         console.log(prayer);
 
-        axios.post('http://localhost:5000/prayer/add' + this.props.match.params.id, prayer)
-        .then(res => console.log(res.data));
+        axios.post('http://localhost:5000/prayer/add', prayer)
+            .then(res => console.log(res.data));
 
-        window.location = '/'
+        window.location = '/prayer';
     }
 
     render() {
         return (
             <div>
                 <h3>Create New Prayer Request</h3>
-                <form onSubmit={this.onSubmit}>
+                <form onSubmit={this.handleSubmit} noValidate>
                     <div className="form-group">
                         <label>First Name</label>
                         <select ref="userInput"
@@ -105,10 +105,12 @@ export default class CreatePrayer extends Component {
                             onChange={this.onChangefirstName}>
                             {
                                 this.state.users.map(function (user) {
-                                    return <option
-                                        key={user}
-                                        value={user}>{user}
-                                    </option>;
+                                    return (
+                                        <option
+                                            key={user}
+                                            value={user}>{user}
+                                        </option>
+                                    );
                                 })
                             }
                         </select>
@@ -122,39 +124,39 @@ export default class CreatePrayer extends Component {
                             onChange={this.onChangelastName}>
                             {
                                 this.state.users.map(function (user) {
-                                    return <option
-                                        key={user}
-                                        value={user}>{user}
-                                    </option>;
+                                    return (
+                                        <option
+                                            key={user}
+                                            value={user}>{user}
+                                        </option>
+                                    );
                                 })
                             }
                         </select>
                     </div>
                     <div className="form-group">
-                        <label>Description: </label>
-                        <input type="text"
-                            required
+                        <label htmlFor="description">Description: </label>
+                        <textarea 
                             className="form-control"
-                            value={this.state.description}
-                            onChange={this.onChangeDescription} />
+                            noValidate onChange={this.handleChange} ></textarea>
 
                     </div>
                     <div className="form-group">
-                        <label>Date: </label>
+                        <label>Date:</label>
                         <div>
                             <DatePicker
                                 selected={this.state.date}
                                 onChange={this.onChangeDate}
                             />
                         </div>
-                        </div>
-
-                        <div className="form-group">
-                            <input type="submit" value="Create New Prayer Request" className="btn btn-secondary" />
-                        </div>
-            </form>
-                    
                     </div>
-                );
-            }
+
+                    <div className="form-group">
+                        <input type="submit" value="Create New Prayer Request" className="btn btn-secondary" />
+                    </div>
+                </form>
+
+            </div>
+        );
+    }
 }

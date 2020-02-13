@@ -13,7 +13,7 @@ class CreateChurch extends Component {
     };
 
     componentDidMount() {
-        axios.get('http://localhost:5000/church'+this.props.match.params.id)
+        axios.get('http://localhost:5000/church')
         .then(response => {
             this.state({
                title: response.data.title
@@ -51,10 +51,10 @@ class CreateChurch extends Component {
         }
         console.log(church);
 
-        axios.post('http://localhost:5000/church/admin/add' + this.props.match.params.id, church)
+        axios.post('http://localhost:5000/church/admin/add', church)
         .then(res => console.log(res.data));
 
-        window.location = '/'
+        window.location = '/Home'
        
     }
 

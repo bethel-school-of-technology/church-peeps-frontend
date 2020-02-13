@@ -72,20 +72,20 @@ class Login extends Component {
       console.log(this.state));
   };
   componentDidMount() {
-    axios.get('http://localhost:5000/users' + this.props.match.params.id)
-      .then(response => {
-        this.state({
-          firstName: response.data.firstName,
-          lastName: response.data.lastName,
-          email: response.data.email,
-          username: response.data.username,
-          password: response.data.password,
-          date: new Date(response.date.date)
-        })
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
+    // axios.get('http://localhost:5000/users')
+    //   .then(response => {
+    //     this.state({
+    //       firstName: response.data.firstName,
+    //       lastName: response.data.lastName,
+    //       email: response.data.email,
+    //       username: response.data.username,
+    //       password: response.data.password,
+    //       date: new Date(response.date.date)
+    //     })
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   })
 
     axios.get('http://localhost:5000/users')
       .then(response => {
