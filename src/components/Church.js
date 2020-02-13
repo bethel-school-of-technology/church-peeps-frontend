@@ -9,7 +9,7 @@ export default class Church extends Component {
     render() {
         return (
             <div>
-                <h3 class="church">Churches</h3>
+                <h3 className="church">Churches</h3>
                 <Route path="/church/admin/add" component={CreateChurch} />
                 <nav>
                     <Link to="/church/admin/add">Add your church here please.</Link>

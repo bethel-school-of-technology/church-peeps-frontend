@@ -110,20 +110,20 @@ class Signup extends Component {
   };
 
   componentDidMount() {
-    axios.get('http://localhost:5000/users'+this.props.match.params.id)
-    .then(response => {
-        this.state({
-            firstName: response.data.firstName,
-            lastName: response.data.lastName,
-            email: response.data.email,
-            username: response.data.username,
-            password: response.data.password,
-            date: new Date(response.date.date)  
-        })
-    })
-    .catch(function(error) {
-        console.log(error);
-    })
+    // axios.get('http://localhost:5000/users')
+    // .then(response => {
+    //     this.state({
+    //         firstName: response.data.firstName,
+    //         lastName: response.data.lastName,
+    //         email: response.data.email,
+    //         username: response.data.username,
+    //         password: response.data.password,
+    //         date: new Date(response.date.date)  
+    //     })
+    // })
+    // .catch(function(error) {
+    //     console.log(error);
+    // })
 
     axios.get('http://localhost:5000/users')
     .then(response => {
@@ -178,10 +178,10 @@ onSubmit(e) {
     }
     console.log();
 
-    axios.post('http://localhost:5000/users/add' + this.props.match.params.id, Signup)
+    axios.post('http://localhost:5000/users/add', Signup)
     .then(res => console.log(res.data));
 
-    window.location = '/'
+    window.location = '/profile'
    
 }
 
@@ -192,7 +192,7 @@ onSubmit(e) {
       <div className="wrapper">
         <div className="form-wrapper">
           <h1>Personal Info</h1>
-          <form onSubmit={this.handlesubmit} noValidate>
+          <form onSubmit={this.handleSubmit} noValidate>
             <div className="firstName">
               <label htmlFor="firstName">First Name</label>
               <input
