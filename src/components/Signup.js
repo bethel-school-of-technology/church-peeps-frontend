@@ -125,7 +125,7 @@ class Signup extends Component {
     //     console.log(error);
     // })
 
-    axios.get('http://localhost:5000/users')
+    axios.get('/users')
     .then(response => {
         if (response.data.length > 0) {
             this.setState({
@@ -178,7 +178,7 @@ onSubmit(e) {
     }
     console.log();
 
-    axios.post('http://localhost:5000/users/add', Signup)
+    axios.post('/users/add', Signup)
     .then(res => console.log(res.data));
 
     window.location = '/profile'
