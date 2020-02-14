@@ -45,15 +45,32 @@ class Signup extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
+    const user = {
+     
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        email: this.state.email,
+        username: this.state.username,
+        password: this.state.password
+    }
+    let user1=JSON.stringify(user);
+    axios.post('/users/add', user1, {headers: {
+      "Content-Type": "application/json"
+    }});
+    // .then(res => console.log(res.data));
+   
     if (formValid(this.state.formErrors)) {
-      console.log(`
-        --SUBMITTING--
-        First Name: ${this.state.firstName}
-        Last Name: ${this.state.lastName}
-        Email: ${this.state.email}
-        Username: ${this.state.username}
-        Password: ${this.state.password}
-      `);
+//       console.log(`
+//         --SUBMITTING--
+//         First Name: ${this.state.firstName}
+//         Last Name: ${this.state.lastName}
+//         Email: ${this.state.email}
+//         Username: ${this.state.username}
+//         Password: ${this.state.password}
+//       `);
+// axios.post('/users/add', Signup)
+//     .then(res => console.log(res.data));
+   
     } else {
       console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
     }
@@ -106,7 +123,7 @@ class Signup extends Component {
         break;
     }
 
-    this.setState({ formErrors, [name]: value }, () => console.log(this.state));
+    this.setState({ formErrors, [name]: value }, () => console.log());
   };
 
   componentDidMount() {
@@ -180,8 +197,6 @@ onSubmit(e) {
 
     axios.post('/users/add', Signup)
     .then(res => console.log(res.data));
-
-    window.location = '/profile'
    
 }
 

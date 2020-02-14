@@ -35,15 +35,26 @@ class Login extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    if (formValid(this.state.formErrors)) {
-      console.log(`
-         --SUBMITTING--
-          Username: ${this.state.username}
-          Password: ${this.state.password}
-        `);
-    } else {
-      console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
+    const user = {
+      username: this.state.username,
+      password: this.state.password
     }
+    let user1=JSON.stringify(user);
+    axios.post('/users/login', user1, {headers: {
+      "Content-Type": "application/json"
+    }});
+
+    
+
+    // if (formValid(this.state.formErrors)) {
+    //   // console.log(`
+    //   //    --SUBMITTING--
+    //   //     Username: ${this.state.username}
+    //   //     Password: ${this.state.password}
+    //   //   `);
+    // } else {
+    //   console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
+    // }
   };
   handleChange = e => {
     e.preventDefault();
@@ -117,6 +128,9 @@ class Login extends Component {
       Login: this.state.Login
     }
     console.log(Login);
+
+    axios.post('/users/login', Login)
+    .then(res => console.res.data);
 
   }
 
