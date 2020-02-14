@@ -37,7 +37,7 @@ export default class CreatePrayer extends Component {
         //     console.log(error);
         // })
 
-        axios.get('http://localhost:5000/prayer')
+        axios.get('/prayer')
             .then(response => {
                 if (response.data.length > 0) {
                     this.setState({
@@ -85,7 +85,7 @@ export default class CreatePrayer extends Component {
 
         console.log(prayer);
 
-        axios.post('http://localhost:5000/prayer/add', prayer)
+        axios.post('/prayer/add', prayer)
             .then(res => console.log(res.data));
 
         window.location = '/prayer';

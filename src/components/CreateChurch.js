@@ -13,7 +13,7 @@ class CreateChurch extends Component {
     };
 
     componentDidMount() {
-        axios.get('http://localhost:5000/church')
+        axios.get('/church')
         .then(response => {
             this.state({
                title: response.data.title
@@ -23,7 +23,7 @@ class CreateChurch extends Component {
             console.log(error);
         })
 
-        axios.get('http://localhost:5000/users')
+        axios.get('/users')
         .then(response => {
             if (response.data.length > 0) {
                 this.setState({
@@ -51,7 +51,7 @@ class CreateChurch extends Component {
         }
         console.log(church);
 
-        axios.post('http://localhost:5000/church/admin/add', church)
+        axios.post('/church/admin/add', church)
         .then(res => console.log(res.data));
 
         window.location = '/Home'

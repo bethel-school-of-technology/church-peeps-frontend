@@ -25,7 +25,7 @@ export default class PrayerAdmin extends Component {
        
     }
     componentDidMount() {
-        axios.get('http://localhost:5000/prayer'+this.props.match.params.id)
+        axios.get('/prayer')
         .then(response => {
             this.state({
                 firstName: response.data.firstName,
@@ -38,7 +38,7 @@ export default class PrayerAdmin extends Component {
             console.log(error);
         })
 
-        axios.get('http://localhost:5000/prayer')
+        axios.get('/prayer')
         .then(response => {
             if (response.data.length > 0) {
                 this.setState({
@@ -81,7 +81,7 @@ export default class PrayerAdmin extends Component {
         }
         console.log(PrayerAdmin);
 
-        axios.post('http://localhost:5000/prayer/admin/update' + this.props.match.params.id, PrayerAdmin)
+        axios.post('/prayer/admin/update', PrayerAdmin)
         .then(res => console.log(res.data));
 
         window.location = '/'
