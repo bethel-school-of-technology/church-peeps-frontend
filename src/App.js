@@ -15,7 +15,7 @@ import CreatePrayer from './components/CreatePrayer';
 import EditChurch from './components/EditChurch';
 import EditPrayer from './components/EditPrayer';
 import EditProfile from './components/EditProfile';
-import UserAdmin from './components/UserAdmin';
+// import UserAdmin from './components/UserAdmin';
 import PrayerAdmin from './components/PrayerAdmin';
 
 function App () {
@@ -32,7 +32,7 @@ function App () {
           <Route path="/users" component={Profile} />
           <Route path="/users/update/:id" component={EditProfile} />
           
-          <Route path="/users/admin/update/:id" component={UserAdmin} />
+          {/* <Route path="/users/admin/update/:id" component={UserAdmin} /> */}
 
           <Route path="/prayer" component={Prayer} />
           <Route path="/prayer/update/:id" component={EditPrayer} />
