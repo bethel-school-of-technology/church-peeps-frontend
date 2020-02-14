@@ -39,7 +39,7 @@ export default class EditPrayer extends Component {
         //     console.log(error);
         // })
 
-    axios.put('http://localhost:5000/prayer')
+    axios.put('/prayer')
             .then(response => {
                 if (response.data.length > 0) {
                     this.setState({
@@ -87,7 +87,7 @@ export default class EditPrayer extends Component {
 
         console.log(prayer);
 
-        axios.get('http://localhost:5000/prayer/add', prayer)
+        axios.get('/prayer/add', prayer)
             .then(res => console.log(res.data));
 
         window.location = '/prayer';
