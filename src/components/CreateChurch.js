@@ -8,7 +8,9 @@ class CreateChurch extends Component {
         super(props);
 
         this.state = {
-            title: ""
+            title: "",
+            city: "",
+            state: "" 
         }
     };
 
@@ -42,6 +44,16 @@ class CreateChurch extends Component {
             title: e.target.value
         })
     }
+    onChangecity(e) {
+        this.setState({
+            city: e.target.value
+        })
+    }
+    onChangestate(e) {
+        this.setState({
+            state: e.target.value
+        })
+    }
 
     onSubmit(e) {
         e.preventDefault();
@@ -61,18 +73,26 @@ class CreateChurch extends Component {
     render() {
         return (
             <div>
-            <h3>Create New Church</h3>
-            <form onSubmit={this.handleSubmit} noValidate>
-                <div className="title">
-                    <label htmlFor="title">Church Name: </label>
-                    <input type="text"
-                    name="title" noValidate onChange={this.handleChange}
-                    />
-                </div>
-                <div className="church">
-                    <button type="submit"  className="btn btn-secondary">Create Church</button>
-                </div>
-            </form>
+                <h3>Create New Church</h3>
+                <form onSubmit={this.handleSubmit} noValidate>
+                    <div className="form-group">
+                        <label htmlFor="title">Church: </label>
+                        <input type="text"
+                            name="title" noValidate onChange={this.handleChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="city">City: </label>
+                        <input type="text" name="city" noValidate onChange={this.onChange} />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="state">State: </label>
+                        <input type="text" name="state" noValidate onChange={this.handleChange} />
+                    </div>
+                    <div className="church">
+                        <button type="submit" className="btn btn-secondary">Create Church</button>
+                    </div>
+                </form>
             </div>
         );
     }
