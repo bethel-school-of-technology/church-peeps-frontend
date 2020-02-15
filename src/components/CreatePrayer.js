@@ -85,7 +85,7 @@ export default class CreatePrayer extends Component {
 
         console.log(prayer);
 
-        axios.post('/prayer/add', prayer)
+        axios.get('/prayer/add', prayer)
             .then(res => console.log(res.data));
 
         window.location = '/prayer';
@@ -153,6 +153,8 @@ export default class CreatePrayer extends Component {
 
                     <div className="form-group">
                         <input type="submit" value="Create New Prayer Request" className="btn btn-secondary" />
+                        <br></br>
+                        <input type="submit" value="Edit Prayer Request" className="btn btn-secondary" />
                     </div>
                 </form>
 
