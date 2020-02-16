@@ -11,17 +11,16 @@ nav {
   min-height: 10vh;
   background: rgba(47, 51, 66, 0.884);
   color: white;
-  /* justify-content: center; */
   margin: 2em;
 }
 
-h3 {
-  margin: 13px;
+h4, h6 {
+  margin: 16px;
   justify-items: flex-start;
   
 }
 
-ul {
+.nav-links {
   display: flex;
   justify-content: space-around;
   margin: 10px;
@@ -89,8 +88,44 @@ li {
   
 }
 
-/* .profileInfo  */
-button {
+
+.profileInfo small {
+  color: black;
+  font-weight: lighter;
+}
+
+body {
+  display: flex;
+   background-image: url("./components/images/nebraska.JPG");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: 100% 100%;
+}
+
+.home-header {
+  font-family: fantasy;
+}
+
+h1, h4, h6 {
+  text-align: center;
+  width: 100%;
+  color: beige;
+  font-weight: lighter;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+h5, h2 {
+  color: whitesmoke;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  display: flex;
+  justify-content: space-around;
+  min-height: 5vh;
+  background: rgba(105, 107, 114, 0.884);
+  margin: 1em 2em;
+}
+
+h3 {
   background-color: rgb(209, 209, 221);
   border: 2px solid rgb(16, 33, 65);
   width: 25%;
@@ -103,39 +138,11 @@ button {
   margin-bottom: 0.25em;
 }
 
-/* .profileInfo  */
-button:hover {
-  color: rgb(32, 112, 165);
+h3:hover {
+  color: rgb(8, 63, 100);
   background-color: white;
   border: 2px solid rgb(0, 0, 0);
 }
-
-.profileInfo small {
-  color: black;
-  font-weight: lighter;
-}
-
-body {
-  display: flex;
-  /* background-image: url("./components/images/E6476857-8F5D-48C4-9C8F-EF4B29F7612C_1_105_c.jpeg"); */
-   background-image: url("./components/images/nebraska.JPG");
-   background-repeat: no-repeat;
-   background-attachment: fixed;
-   background-size: 100% 100%;
-}
-
-.home-header {
-  font-family: fantasy;
-}
-
-h1, h3 {
-  text-align: center;
-  width: 100%;
-  color: beige;
-  font-weight: lighter;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
-
 
 input {
   margin: 10px;
@@ -167,4 +174,9 @@ small {
   padding: 5px;
   margin-top: 1em;
   color: rgb(16, 33, 65);
+}
+
+.churches {
+  color: black;
+  font-size: 1.5em;
 }
