@@ -2,7 +2,7 @@ import "../App";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from "react";
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 
 const formValid = ({ formErrors, ...rest }) => {
   let valid = true;
@@ -46,15 +46,15 @@ class Login extends Component {
 
     
 
-    // if (formValid(this.state.formErrors)) {
-    //   // console.log(`
-    //   //    --SUBMITTING--
-    //   //     Username: ${this.state.username}
-    //   //     Password: ${this.state.password}
-    //   //   `);
-    // } else {
-    //   console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
-    // }
+    if (formValid(this.state.formErrors)) {
+      // console.log(`
+      //    --SUBMITTING--
+      //     Username: ${this.state.username}
+      //     Password: ${this.state.password}
+      //   `);
+    } else {
+      console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
+    }
   };
   handleChange = e => {
     e.preventDefault();
@@ -162,9 +162,7 @@ class Login extends Component {
                 <span className="errorMessage">{formErrors.password}</span>
               )}
             </div>
-            <div className="login">
-              <button type="submit">Login</button>
-            </div>
+            <Link to="/profile"><h5>Login</h5></Link>
           </form>
         </div>
       </div>

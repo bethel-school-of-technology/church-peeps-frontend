@@ -9,7 +9,7 @@ import Profile from './components/Profile';
 import Prayer from './components/Prayer';
 import Login from './components/login';
 import Signup from './components/Signup';
-import Church from './components/Church';
+// import Church from './components/Church';
 import CreateChurch from './components/CreateChurch';
 import CreatePrayer from './components/CreatePrayer';
 import EditChurch from './components/EditChurch';
@@ -17,6 +17,7 @@ import EditPrayer from './components/EditPrayer';
 import EditProfile from './components/EditProfile';
 // import UserAdmin from './components/UserAdmin';
 import PrayerAdmin from './components/PrayerAdmin';
+import Logout from './components/logout';
 
 function App () {
   return (
@@ -29,21 +30,22 @@ function App () {
           <Route path="/signup" component={Signup} />
 
           <Route path="/login" component={Login} />
-          <Route path="/users" component={Profile} />
-          <Route path="/users/update/:id" component={EditProfile} />
+          <Route path="/logout" component={Logout} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/profile/update/:id" component={EditProfile} />
           
           {/* <Route path="/users/admin/update/:id" component={UserAdmin} /> */}
 
           <Route path="/prayer" component={Prayer} />
           <Route path="/prayer/update/:id" component={EditPrayer} />
-          <Route path="/prayer/add" component={CreatePrayer} />
+          <Route path="/addprayer" component={CreatePrayer} />
           
           <Route path="/prayer/admin/update/:id" component={PrayerAdmin} />
 
 
-          <Route path="/Church" component={Church} />
-          <Route path="/Church/admin/update" component={EditChurch} />
-          <Route path="/Church/admin/add" component={CreateChurch} />
+          {/* <Route path="/church" component={Church} /> */}
+          <Route path="/church/update" component={EditChurch} />
+          <Route path="/church/add" component={CreateChurch} />
 
         </Switch>
       </div>

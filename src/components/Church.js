@@ -1,20 +1,19 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import CreateChurch from './CreateChurch';
-import { Link } from "react-router-dom";
-import "../App";
+// import React, { Component } from "react";
+// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// import { Link } from "react-router-dom";
+// import "../App";
+// import CreateChurch from './CreateChurch';
 
-export default class Church extends Component {
-    render() {
-        return (
-            <div>
-                <h3 className="church">Churches</h3>
-                <Route path="/church/admin/add" component={CreateChurch} />
-                <nav>
-                    <Link to="/church/admin/add">Add your church here please.</Link>
-                </nav>
-            </div>
-        );
-    }
-}
+// export default class Church extends Component {
+//     render() {
+//         return (
+//             <div>
+//                 <h5 className="church">Churches</h5>
+//                 <Route path="/church/add" component={CreateChurch} />
+//                 <nav>
+//                     <Link to="/church/add"><h6>Add your church here please.</h6></Link>
+//                 </nav>
+//             </div>
+//         );
+//     }
+// }

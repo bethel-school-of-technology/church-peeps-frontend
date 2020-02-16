@@ -3,6 +3,7 @@ import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import "../App"
+import { Link } from 'react-router-dom';
 
 export default class CreatePrayer extends Component {
     constructor(props) {
@@ -94,7 +95,7 @@ export default class CreatePrayer extends Component {
     render() {
         return (
             <div>
-                <h3>Create New Prayer Request</h3>
+                <h2>Create New Prayer Request</h2>
                 <form onSubmit={this.handleSubmit} noValidate>
                     <div className="form-group">
                         <label>First Name</label>
@@ -136,7 +137,7 @@ export default class CreatePrayer extends Component {
                     </div>
                     <div className="form-group">
                         <label htmlFor="description">Description: </label>
-                        <textarea 
+                        <textarea
                             className="form-control"
                             noValidate onChange={this.handleChange} ></textarea>
 
@@ -150,12 +151,9 @@ export default class CreatePrayer extends Component {
                             />
                         </div>
                     </div>
-
-                    <div className="form-group">
-                        <input type="submit" value="Create New Prayer Request" className="btn btn-secondary" />
-                        <br></br>
-                        <input type="submit" value="Edit Prayer Request" className="btn btn-secondary" />
-                    </div>
+                    <nav>
+                        <Link to="/prayer"><h6>Create New Prayer Request</h6></Link>
+                    </nav>
                 </form>
 
             </div>

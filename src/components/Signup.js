@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../App";
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 const emailRegex = RegExp(
   /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/
 );
@@ -127,21 +127,6 @@ class Signup extends Component {
   };
 
   componentDidMount() {
-    // axios.get('http://localhost:5000/users')
-    // .then(response => {
-    //     this.state({
-    //         firstName: response.data.firstName,
-    //         lastName: response.data.lastName,
-    //         email: response.data.email,
-    //         username: response.data.username,
-    //         password: response.data.password,
-    //         date: new Date(response.date.date)  
-    //     })
-    // })
-    // .catch(function(error) {
-    //     console.log(error);
-    // })
-
     axios.get('/users')
     .then(response => {
         if (response.data.length > 0) {
@@ -285,7 +270,7 @@ onSubmit(e) {
             </div>
 
             <div className="createAccount">
-              <button type="submit">Sign Up</button>
+             <Link to="/profile"><h3>Sign up</h3></Link>
               <br></br>
               <small>Already Have an <a href="./login">Account?</a></small>
 

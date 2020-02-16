@@ -2,6 +2,23 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import "../App"
+import { Link } from "react-router-dom";
+
+const formValid = ({ formErrors, ...rest }) => {
+    let valid = true;
+
+    //validate form errors are empty
+    Object.values(formErrors).forEach(val => {
+        val.length > 0 && (valid = false);
+    });
+
+    //validate form was completed
+    Object.values(rest).forEach(val => {
+        val == null && (valid = false);
+    });
+
+    return valid;
+};
 
 class CreateChurch extends Component {
     constructor(props) {
@@ -10,33 +27,74 @@ class CreateChurch extends Component {
         this.state = {
             title: "",
             city: "",
-            state: "" 
+            state: "",
+            formErrors: {
+                title: "",
+                city: "",
+                state: ""
+            }
+        };
+    }
+
+    handleSubmit = e => {
+        e.preventDefault();
+
+        const church = {
+
+            title: this.state.title,
+            city: this.state.city,
+            state: this.state.state
+        }
+        let church1 = JSON.stringify(church);
+        axios.post('/church/add', church1, {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        if (formValid(this.state.formErrors)) {
+
+        } else {
+            console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
         }
     };
 
-    componentDidMount() {
-        axios.get('/church')
-        .then(response => {
-            this.state({
-               title: response.data.title
-            })
-        })
-        .catch(function(error) {
-            console.log(error);
-        })
+    handleChange = e => {
+        e.preventDefault();
+        const { name, value } = e.target;
+        let formErrors = this.state;
 
-        axios.get('/users')
-        .then(response => {
-            if (response.data.length > 0) {
-                this.setState({
-                    users: response.data.map(user => user.username),
-                })
-            }
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-        
+        switch (name) {
+            case "title":
+                formErrors.title = value.length < 3 && value.length > 0 ? "minimum 3 characters required" : "";
+                break;
+
+            case "city":
+                formErrors.city = value.length < 3 && value.length > 0 ? "minimum 3 characters required" : "";
+                break;
+
+            case "state":
+                formErrors.state = value.length < 3 && value.length > 0 ? "minimum 3 characters required" : "";
+                break;
+            default:
+                break;
+        }
+
+        this.setState({ formErrors, [name]: value }, () => console.log());
+    };
+
+    componentDidMount() {
+        axios.get('/church/add')
+            .then(response => {
+                if (response.data.length > 0) {
+                    this.state({
+                        Church: response.data.map(church => church.title),
+                    })
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+
     }
 
     onChangetitle(e) {
@@ -57,40 +115,54 @@ class CreateChurch extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        
-        const church = {
-            title: this.state.title
+
+        const Church = {
+            Church: this.state.Church
         }
-        console.log(church);
+        console.log();
 
-        axios.post('/church/admin/add', church)
-        .then(res => console.log(res.data));
+        axios.post('/church/add', Church)
+            .then(res => console.log(res.data));
 
-        window.location = '/Home'
-       
+
     }
 
     render() {
+        const { formErrors } = this.state;
         return (
             <div>
-                <h3>Create New Church</h3>
+                <h2>Create New Church</h2>
                 <form onSubmit={this.handleSubmit} noValidate>
                     <div className="form-group">
                         <label htmlFor="title">Church: </label>
-                        <input type="text"
+                        <input className={formErrors.title.length > 0 ? "error" : null}
+                            placeholder="title" type="text"
                             name="title" noValidate onChange={this.handleChange}
                         />
+                        {formErrors.title.length > 0 && (
+                            <span className="errorMessage">{formErrors.title}</span>
+                        )}
                     </div>
                     <div className="form-group">
                         <label htmlFor="city">City: </label>
-                        <input type="text" name="city" noValidate onChange={this.onChange} />
+                        <input className={formErrors.city.length > 0 ? "error" : null}
+                            placeholder="city" type="text" name="city" noValidate onChange={this.onChange} />
+                        {formErrors.city.length > 0 && (
+                            <span className="errorMessage">{formErrors.city}</span>
+                        )}
                     </div>
                     <div className="form-group">
                         <label htmlFor="state">State: </label>
-                        <input type="text" name="state" noValidate onChange={this.handleChange} />
+                        <input className={formErrors.state.length > 0 ? "error" : null}
+                            placeholder="state" type="text" name="state" noValidate onChange={this.handleChange} />
+                        {formErrors.state.length > 0 && (
+                            <span className="errorMessage">{formErrors.state}</span>
+                        )}
                     </div>
                     <div className="church">
-                        <button type="submit" className="btn btn-secondary">Create Church</button>
+                       <nav>
+                           <Link to="/"><h5>Create Church</h5></Link>
+                       </nav>
                     </div>
                 </form>
             </div>
