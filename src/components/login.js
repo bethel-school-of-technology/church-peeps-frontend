@@ -138,6 +138,9 @@ class Login extends Component {
     const { formErrors } = this.state;
     return (
       <div className="wrapper">
+        
+        <h1>Welcome back, please login so you can connect with your Church Peeps.</h1>
+         
         <div className="form-wrapper">
           <h1>Profile for</h1>
           <form onSubmit={this.handleSubmit}

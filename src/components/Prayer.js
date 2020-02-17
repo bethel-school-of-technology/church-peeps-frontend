@@ -9,6 +9,7 @@ export default class Prayer extends Component {
     render() {
         return (
             <div>
+                <h1>Your Church Peeps are here for you, please let us know how we can pray for you.</h1>                
                 <h2 className="prayer">Prayer Requests</h2>
                 <Route path="/addprayer" component={CreatePrayer} />
                 <nav>

@@ -190,8 +190,11 @@ onSubmit(e) {
     const { formErrors } = this.state;
     return (
       <div className="wrapper">
+        
+        <h1>New to Church Peeps?  Please create and account with us! Enjoy your experience with our app.</h1>
+         
         <div className="form-wrapper">
-          <h1>Personal Info</h1>
+           <h1>Personal Info</h1>
           <form onSubmit={this.handleSubmit} noValidate>
             <div className="firstName">
               <label htmlFor="firstName">First Name</label>
@@ -270,7 +273,7 @@ onSubmit(e) {
             </div>
 
             <div className="createAccount">
-             <Link to="/profile"><h3>Sign up</h3></Link>
+             <Link to="/profile"><h5>Sign up</h5></Link>
               <br></br>
               <small>Already Have an <a href="./login">Account?</a></small>
 
