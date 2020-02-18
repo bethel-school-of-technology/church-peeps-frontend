@@ -6,7 +6,7 @@ export default class Nav extends Component {
 
   render() {
     const navStyle = {
-      color: "beige"
+      color: "beige"      
     };
     return (
       <nav>
