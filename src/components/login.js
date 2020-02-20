@@ -35,12 +35,12 @@ class Login extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    const user = {
+    const login = {
       username: this.state.username,
       password: this.state.password
     }
-    let user1=JSON.stringify(user);
-    axios.post('/users/login', user1, {headers: {
+    let Login=JSON.stringify(login);
+    axios.post('/users/login', Login, {headers: {
       "Content-Type": "application/json"
     }});
 
