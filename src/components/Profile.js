@@ -39,7 +39,7 @@ class Profile extends Component {
             .then(response => {
                 if (response.data.length > 0) {
                     this.setState = {
-                        users: response.data.map(users => users.username),
+                        users: response.data,
                     };
                 }
             })
@@ -65,7 +65,7 @@ class Profile extends Component {
         if (this.setState.users.length === 0) {
             return <div><h2>Failed to fetch users</h2></div>;
         }
-        const users = this.state.users.map((user, index) => (
+        const users = this.setState.users.map((user, index) => (
             <div key={index}>
                 <div className="wrapper">
                     
