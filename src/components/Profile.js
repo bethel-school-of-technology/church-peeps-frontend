@@ -11,7 +11,10 @@ class Profile extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { users: [] };
+        this.setState = {
+            users: [],
+            profile: []
+        };
     }
     fetchusers = () => {
         var encodedURI = window.encodeURI(this.props.uri);
@@ -31,49 +34,50 @@ class Profile extends Component {
         //     });
         // });
         // this.fetchusers();
-        
+
         axios.get('/users')
             .then(response => {
                 if (response.data.length > 0) {
-                    this.setState({
-                        users: response.data.map(user => user.username),
-                    })
+                    this.setState = {
+                        users: response.data.map(users => users.username),
+                    };
                 }
             })
             .catch((error) => {
                 console.log(error);
             })
 
-
+            // axios.get('/profile')
+            // .then(response => {
+            //     if (response.data.length > 0) {
+            //         this.setState({
+            //             profile: response
+            //         })
+            //     }
+            // })
+            // .catch((error) => {
+            //     console.log(error);
+            // })
     }
-       render() {
-        
-        console.log(this.state.users);
-        if (this.state.users.length === 0) {
-            return <div>Failed to fetch users</div>;
+    render() {
+
+        console.log(this.setState.users);
+        if (this.setState.users.length === 0) {
+            return <div><h2>Failed to fetch users</h2></div>;
         }
-        const users = this.state.users.map( user => (
-                        <div key={user.users}>                            
-                            <div className="wrapper">
-                            <h2>Your Church Peeps</h2>
-                
-                <li>{user.firstName} {user.lastName}</li>               
-              <em>{user.username}</em>: {user.firstName} {user.lastName}
-            </div>
+        const users = this.state.users.map((user, index) => (
+            <div key={index}>
+                <div className="wrapper">
+                    
+                    <h2>Your Church Peeps</h2>
+
+                    <li>{user.firstName} {user.lastName}</li>               
+                    <em>{user.username}</em>: {user.firstName} {user.lastName}
+                </div>
             </div>
         ));
         return <div>{users}</div>
-        
+
     }
 }
 export default Profile;
-
-{/* <ul>
-            {this.state.users.map(user => <li>{user.firstName} {user.lastName}</li>)}
-        </ul> */}
-         {/* <div>
-                    <div>{this.state.users.firstName}</div>
-                    <div> {this.state.users.lastName} </div>
-                    </div> */}
-                {/* <input type="file" accept="image/*;capture=camera"></input>
-                <img src=""></img> */}

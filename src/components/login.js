@@ -79,8 +79,8 @@ class Login extends Component {
       default:
         break;
     }
-    this.setState({ formErrors, [name]: value }, () =>
-      console.log(this.state));
+    // this.setState({ formErrors, [name]: value }, () =>
+    //   console.log(this.state));
   };
   componentDidMount() {
     // axios.get('http://localhost:5000/users')
