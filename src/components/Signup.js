@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../App";
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+
 const emailRegex = RegExp(
   /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/
 );
@@ -273,7 +273,7 @@ onSubmit(e) {
             </div>
 
             <div className="createAccount">
-             <Link to="/profile"><h5>Sign up</h5></Link>
+              <button type="submit">Continue to Profile page</button>
               <br></br>
               <small>Already Have an <a href="./login">Account?</a></small>
 
