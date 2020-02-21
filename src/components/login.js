@@ -2,7 +2,6 @@ import "../App";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from "react";
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 
 const formValid = ({ formErrors, ...rest }) => {
   let valid = true;
@@ -23,6 +22,7 @@ const formValid = ({ formErrors, ...rest }) => {
 class Login extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       username: "",
       password: "",
@@ -32,6 +32,7 @@ class Login extends Component {
       }
     };
   }
+  
   handleSubmit = e => {
     e.preventDefault();
 
@@ -39,8 +40,8 @@ class Login extends Component {
       username: this.state.username,
       password: this.state.password
     }
-    let Login=JSON.stringify(login);
-    axios.post('/users/login', Login, {headers: {
+    let login1=JSON.stringify(login);
+    axios.post('/users/login', login1, {headers: {
       "Content-Type": "application/json"
     }});
 
@@ -79,8 +80,8 @@ class Login extends Component {
       default:
         break;
     }
-    // this.setState({ formErrors, [name]: value }, () =>
-    //   console.log(this.state));
+    this.setState({ formErrors, [name]: value }, () =>
+      console.log(this.state));
   };
   componentDidMount() {
     // axios.get('http://localhost:5000/users')
@@ -165,7 +166,9 @@ class Login extends Component {
                 <span className="errorMessage">{formErrors.password}</span>
               )}
             </div>
-            <Link to="/profile"><h5>Login</h5></Link>
+            <div className="login">
+            <button type="submit">Login</button>
+            </div>
           </form>
         </div>
       </div>

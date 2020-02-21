@@ -47,17 +47,17 @@ class Profile extends Component {
                 console.log(error);
             })
 
-            // axios.get('/profile')
-            // .then(response => {
-            //     if (response.data.length > 0) {
-            //         this.setState({
-            //             profile: response
-            //         })
-            //     }
-            // })
-            // .catch((error) => {
-            //     console.log(error);
-            // })
+        // axios.get('/profile')
+        // .then(response => {
+        //     if (response.data.length > 0) {
+        //         this.setState({
+        //             profile: response
+        //         })
+        //     }
+        // })
+        // .catch((error) => {
+        //     console.log(error);
+        // })
     }
     render() {
 
@@ -65,14 +65,16 @@ class Profile extends Component {
         if (this.setState.users.length === 0) {
             return <div><h2>Failed to fetch users</h2></div>;
         }
+        
         const users = this.setState.users.map((user, index) => (
-            <div key={index}>
-                <div className="wrapper">
-                    
-                    <h2>Your Church Peeps</h2>
 
-                    <li>{user.firstName} {user.lastName}</li>               
-                    <em>{user.username}</em>: {user.firstName} {user.lastName}
+            <div key={index}>
+
+                <div className="wrapper">
+
+
+                    <li><h5>{user.firstName} {user.lastName}</h5></li>
+                    {/* <em>{user.username}</em>: {user.firstName} {user.lastName} */}
                 </div>
             </div>
         ));
