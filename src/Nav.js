@@ -20,7 +20,7 @@ export default class Nav extends Component {
               <Link style={navStyle} to="/login">Login</Link>
             </li>
             <li>
-              <Link style={navStyle} to="/profile">Peeps</Link>
+              <Link style={navStyle} to="/peeps">Peeps</Link>
             </li>
             <li>
               <Link style={navStyle} to="/prayer">Prayer Requests</Link>
