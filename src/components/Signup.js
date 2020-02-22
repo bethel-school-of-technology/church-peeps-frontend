@@ -191,7 +191,7 @@ onSubmit(e) {
     return (
       <div className="wrapper">
         
-        <h1>New to Church Peeps?  Please create and account with us! Enjoy your experience with our app.</h1>
+        <h1>New to Church Peeps?  Please create an account with us! Enjoy your experience with our app.</h1>
          
         <div className="form-wrapper">
            <h1>Personal Info</h1>

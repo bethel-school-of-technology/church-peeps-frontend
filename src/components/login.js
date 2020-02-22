@@ -2,6 +2,7 @@ import "../App";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from "react";
 import axios from 'axios';
+import { Redirect } from "react-router-dom";
 
 const formValid = ({ formErrors, ...rest }) => {
   let valid = true;
@@ -23,6 +24,7 @@ class Login extends Component {
   constructor(props) {
     super(props);
 
+    
     this.state = {
       username: "",
       password: "",
@@ -31,10 +33,14 @@ class Login extends Component {
         password: ""
       }
     };
+
   }
   
   handleSubmit = e => {
     e.preventDefault();
+
+  
+
 
     const login = {
       username: this.state.username,
@@ -43,16 +49,13 @@ class Login extends Component {
     let login1=JSON.stringify(login);
     axios.post('/users/login', login1, {headers: {
       "Content-Type": "application/json"
-    }});
+    }}).then(() => {
+ 
+    });
 
     
 
     if (formValid(this.state.formErrors)) {
-      // console.log(`
-      //    --SUBMITTING--
-      //     Username: ${this.state.username}
-      //     Password: ${this.state.password}
-      //   `);
     } else {
       console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
     }
@@ -84,22 +87,7 @@ class Login extends Component {
       console.log(this.state));
   };
   componentDidMount() {
-    // axios.get('http://localhost:5000/users')
-    //   .then(response => {
-    //     this.state({
-    //       firstName: response.data.firstName,
-    //       lastName: response.data.lastName,
-    //       email: response.data.email,
-    //       username: response.data.username,
-    //       password: response.data.password,
-    //       date: new Date(response.date.date)
-    //     })
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   })
-
-    axios.get('/users')
+     axios.get('/users')
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
@@ -137,10 +125,14 @@ class Login extends Component {
 
   render() {
     const { formErrors } = this.state;
+  //   if (this.setState.users.length === 0) {
+  //     return <Redirect to="/profile" />
+  // }
     return (
       <div className="wrapper">
+        {/* <Redirect to="/profile" /> */}
         
-        <h1>Welcome back, please login so you can connect with your Church Peeps.</h1>
+         <h1>Welcome back, please login so you can connect with your Church Peeps.</h1>
          
         <div className="form-wrapper">
           <h1>Profile for</h1>
