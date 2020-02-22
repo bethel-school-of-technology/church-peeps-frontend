@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Nav from './Nav';
 import Home from './components/Home';
-import Profile from './components/Profile';
+import Peeps from './components/Peeps';
 import Prayer from './components/Prayer';
 import Login from './components/login';
 import Signup from './components/Signup';
@@ -31,7 +31,7 @@ function App () {
 
           <Route path="/login" component={Login} />
           <Route path="/logout" component={Logout} />
-          <Route path="/profile" component={Profile} />
+          <Route path="/peeps" component={Peeps} />
           <Route path="/profile/update/:id" component={EditProfile} />
           
           {/* <Route path="/users/admin/update/:id" component={UserAdmin} /> */}

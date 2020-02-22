@@ -7,18 +7,20 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Welcome to Church Peeps. Please find your church in the list below before creating a profile. Enjoy your experience with our app.</h1>
+        <h1>Welcome to Church Peeps. Please go to Signup and Create a Profile if new or to login if you aleady have a Profile. Enjoy your experience with our app.</h1>
        
-          <h2>Churches:</h2>
+          {/* <h2>Church:</h2>
         
-        <ul className="churches">
-          <li className="church">This is a place holder for the list of churches that should reside here.</li>
+        <ul className="church">
+          <li className="church">This is a place holder for the list for your church that should reside here.</li>
           <li className="church">church one</li>
           <li className="church">church two</li>
         </ul>
-    
-        <Link to="/church/add"><h6>Add a new church here</h6></Link>
-       
+
+        <Link to="/signup"><h6>Signup</h6></Link>
+        <Link to="/profile/add"><h6>Create Profile</h6></Link>
+        <Link to="/login"><h6>Login</h6></Link>
+        */}
       </div>
 
     );
