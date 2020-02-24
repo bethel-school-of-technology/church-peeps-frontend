@@ -27,29 +27,23 @@ export default class EditPrayer extends Component {
   }
 
   componentDidMount() {
-    axios.put('/prayer')
-    .then(response => {
-        this.state({
-           title: response.data.title
-        })
-    })
-    .catch(function(error) {
-        console.log(error);
-    })
+    console.log(process.env);
 
-    axios.put('/users')
+    axios.get('/prayer/' + this.props.match.params.id)
     .then(response => {
-        if (response.data.length > 0) {
-            this.setState({
-                users: response.data.map(user => user.username),
-            })
-        }
+      console.log(response.data);
+      this.setState({
+        firstName: response.data.firstName,
+        lastName: response.data.lastName,
+        description: response.data.description,
+        date: new Date(response.data.date)
+      });
     })
-    .catch((error) => {
-        console.log(error);
-    })
-    
-}
+    .catch(function (err) {
+      console.log(err);
+    });
+  }
+     
 
   onChangefirstName(e) {
     this.setState({
@@ -84,10 +78,16 @@ export default class EditPrayer extends Component {
 
     console.log(prayer);
 
-    axios.put("/prayer/edit", prayer).then(res => console.log(res.data));
-
-    // window.location = '/prayer';
-  }
+    axios.put("/prayer/update" + this.props.match.params.id, prayer)
+    .then(res => {
+      console.log(res);
+    this.props.history.push('/prayer');
+})
+.catch(err => {
+  console.error(err);
+  alert('Something went wrong');
+});
+    }
 
   render() {
     return (
@@ -103,13 +103,6 @@ export default class EditPrayer extends Component {
               value={this.state.firstName}
               onChange={this.onChangefirstName}
             >
-              {this.state.users.map(function(user) {
-                return (
-                  <option key={user} value={user}>
-                    {user}
-                  </option>
-                );
-              })}
             </select>
           </div>
           <div className="form-group">
@@ -121,13 +114,6 @@ export default class EditPrayer extends Component {
               value={this.state.lastName}
               onChange={this.onChangelastName}
             >
-              {this.state.users.map(function(user) {
-                return (
-                  <option key={user} value={user}>
-                    {user}
-                  </option>
-                );
-              })}
             </select>
           </div>
           <div className="form-group">
@@ -157,7 +143,7 @@ export default class EditPrayer extends Component {
       </div>
     );
   }
-}
 
+}
 
 
