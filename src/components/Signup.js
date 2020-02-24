@@ -53,23 +53,17 @@ class Signup extends Component {
         username: this.state.username,
         password: this.state.password
     }
-    let user1=JSON.stringify(user);
-    axios.post('/users/add', user1, {headers: {
-      "Content-Type": "application/json"
-    }});
-    // .then(res => console.log(res.data));
+
+    axios.post("/users/add", user)
+    .then(res => {
+      if (res.status === 200) {
+        console.log('User created');
+        this.props.history.push("/login");
+      }
+    })
+    .catch(err => alert('User already exists. Please try again.'));
    
     if (formValid(this.state.formErrors)) {
-//       console.log(`
-//         --SUBMITTING--
-//         First Name: ${this.state.firstName}
-//         Last Name: ${this.state.lastName}
-//         Email: ${this.state.email}
-//         Username: ${this.state.username}
-//         Password: ${this.state.password}
-//       `);
-// axios.post('/users/add', Signup)
-//     .then(res => console.log(res.data));
    
     } else {
       console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
@@ -180,8 +174,8 @@ onSubmit(e) {
     }
     console.log();
 
-    axios.post('/users/add', Signup)
-    .then(res => console.log(res.data));
+    // axios.post('/users/add', Signup)
+    // .then(res => console.log(res.data));
    
 }
 
@@ -273,7 +267,7 @@ onSubmit(e) {
             </div>
 
             <div className="createAccount">
-              <button type="submit">Continue to Profile page</button>
+              <button type="submit">Continue to Login page</button>
               <br></br>
               <small>Already Have an <a href="./login">Account?</a></small>
 

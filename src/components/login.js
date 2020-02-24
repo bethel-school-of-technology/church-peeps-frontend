@@ -2,7 +2,6 @@ import "../App";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from "react";
 import axios from 'axios';
-import { Redirect } from "react-router-dom";
 
 const formValid = ({ formErrors, ...rest }) => {
   let valid = true;
@@ -35,31 +34,53 @@ class Login extends Component {
     };
 
   }
+  handleInputChange = e => {
+    const { value, name } = e.target;
+    this.setState({
+      [name]: value
+    });
+  };
   
   handleSubmit = e => {
     e.preventDefault();
-
-  
-
 
     const login = {
       username: this.state.username,
       password: this.state.password
     }
-    let login1=JSON.stringify(login);
-    axios.post('/users/login', login1, {headers: {
-      "Content-Type": "application/json"
-    }}).then(() => {
+    // let login1=JSON.stringify(login);
+    // axios.post('/users/login', login1, {headers: {
+    //   "Content-Type": "application/json"
+    // }}).then(() => {
  
-    });
+    // });
+
+    axios.post("/users/login", login)
+      .then(response => {
+        if (response.data === "Wrong password") {
+          console.log(response);
+          alert("Invalid password! Please try again.");
+        }
+        if (formValid(this.state.formErrors)) {
+          console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
+        } else if (response.data !== "Wrong password" && response.status === 200) {
+          console.log(response);
+          console.log(response.headers.authorization);
+          const authCookie = "auth=" + response.headers.authorization;
+          document.cookie = authCookie;
+          alert("You are logged in!");
+          this.props.history.push("/profile");
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Error logging in please try again");
+      });
+  };
 
     
 
-    if (formValid(this.state.formErrors)) {
-    } else {
-      console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
-    }
-  };
+    
   handleChange = e => {
     e.preventDefault();
     const { name, value } = e.target;

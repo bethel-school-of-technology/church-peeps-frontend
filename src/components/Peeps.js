@@ -55,7 +55,7 @@ class Peeps extends Component {
                 <div className="wrapper">
 
 
-                    <li><h5>{user.firstName} {user.lastName}</h5></li>
+                    <li>{user.firstName} {user.lastName}</li>
 
                 </div>
             </div>
