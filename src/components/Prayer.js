@@ -51,7 +51,7 @@ class Prayer extends Component {
             <div key={index}>
                 <div className="wrapper">
                     <div>
-                        <li>{prayer.firstName} {prayer.lastName} {prayer.description}</li>
+                        <li>{prayer.firstName} {prayer.lastName}'s prayer request is:  {prayer.description}</li>
                     </div>
                     
                 </div>
@@ -59,17 +59,17 @@ class Prayer extends Component {
         ));
         return ( 
         <div>
+            <header>
             <h1>Your Church Peeps are here for you, please let us know how we can pray for you.</h1>                
             <h2 className="prayer">Prayer Requests</h2>
-           
-
-            <nav>
-                <Link to="/addprayer"><h6>Add Prayer Request</h6></Link>
-            </nav>
+            </header>
+            <div className="footer"> 
+            
+                <Link to="/addprayer"><p>Add Prayer Request</p></Link>
+         
             <Route path="/addprayer" component={CreatePrayer} />
-       
-
-        <div>{users}</div>
+            </div>
+             <div>{users}</div>
         </div>
         )
     }
