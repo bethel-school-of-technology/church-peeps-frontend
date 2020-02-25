@@ -5,14 +5,20 @@
 }
 
 nav {
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-  align-items: stretch;
-  min-height: 10vh;
+  text-align: center;
   background: rgba(47, 51, 66, 0.884);
-  color: white;
-  margin: 2em;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  position: absolute;
+  /* display: flex; */
+  /* justify-content: space-around; */
+  /* align-items: stretch; */
+  /* min-height: 10vh; */
+  /* background: rgba(47, 51, 66, 0.884); */
+  /* color: white; */
+  /* margin: 2em;  */
 }
 
 h4, h6 {
@@ -30,6 +36,7 @@ h4, h6 {
 }
 
 li {
+  color: beige;
   display: flex;
   justify-content: space-around;
   margin: 10px;
@@ -78,6 +85,8 @@ li {
   padding: 20px 40px;
   border-radius: 10px;
   box-shadow: 0pc 10px 50;
+  position: relative;
+  text-align: center;
 }
 
 .profileInfo {
@@ -117,6 +126,8 @@ h1, h4, h6 {
 }
 
 h5, h2 {
+  position: fixed;
+  width: 100%;
   color: whitesmoke;
   font-weight: bold;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -182,5 +193,13 @@ small {
   color: black;
   font-size: 1.5em;
 }
-
-
+.footer {
+  background: rgba(47, 51, 66, 0.884);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  color: beige;
+}

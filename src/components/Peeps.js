@@ -62,8 +62,12 @@ class Peeps extends Component {
         ));
         return (
             <div>
+                <header>
             <h1>Your Church Peeps</h1>
-       
+            </header>
+            <div className="footer">
+                <p>We love our ChurchPeeps</p>
+            </div>
         <div>{users}</div>
         </div>
         )

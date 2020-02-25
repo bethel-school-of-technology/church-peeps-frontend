@@ -46,9 +46,13 @@ export default class Profile extends Component {
     render () {
         return (
             <div>
+                <header>
                 <h2>Welcome to your profile. </h2>
+                </header>
                     <h5>Here you can upload your image, edit or delete your contact information, and update or delete your prayer requests. </h5>
+                    <div className="footer">
                 <p>Prayer Requests | <Link to="/addprayer" >Create your prayer</Link> | <Link to="/editprayer">Edit your prayer</Link></p>
+                </div>
                 {/* <p>{this.prayerList()}</p> */}
             </div>
         );

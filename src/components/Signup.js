@@ -184,9 +184,9 @@ onSubmit(e) {
     const { formErrors } = this.state;
     return (
       <div className="wrapper">
-        
+        <header>
         <h1>New to Church Peeps?  Please create an account with us! Enjoy your experience with our app.</h1>
-         
+        </header>
         <div className="form-wrapper">
            <h1>Personal Info</h1>
           <form onSubmit={this.handleSubmit} noValidate>
