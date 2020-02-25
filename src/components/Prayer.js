@@ -59,10 +59,10 @@ class Prayer extends Component {
         ));
         return ( 
         <div>
-            <header>
-            <h1>Your Church Peeps are here for you, please let us know how we can pray for you.</h1>                
+            
+            {/* <h1>Your Church Peeps are here for you, please let us know how we can pray for you.</h1>                 */}
             <h2 className="prayer">Prayer Requests</h2>
-            </header>
+           
             <div className="footer"> 
             
                 <Link to="/addprayer"><p>Add Prayer Request</p></Link>
