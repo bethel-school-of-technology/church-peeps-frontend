@@ -53,17 +53,17 @@ class Peeps extends Component {
             <div key={index}>
 
                 <div className="wrapper">
-
-
+                    <div className="ChurchPeeps">
                     <li>{user.firstName} {user.lastName}</li>
-
+                    
+                    </div>
                 </div>
             </div>
         ));
         return (
             <div>
                 <header>
-            <h1>Your Church Peeps</h1>
+            <h2>Your Church Peeps</h2>
             </header>
             <div className="footer">
                 <p>We love our ChurchPeeps</p>

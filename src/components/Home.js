@@ -7,7 +7,8 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Welcome to Church Peeps. Please go to Signup and Create a Profile if new or to login if you aleady have a Profile. Enjoy your experience with our app.</h1>
+        <h2>Welcome to Church Peeps. Please go to Signup and Create a Profile if new or to login if you aleady have a Profile. Enjoy your experience with our app.</h2>
+        {/* <img src="/images/ChurchPeeps.jpg" alt="logo" class="logo"></img> */}
        
           {/* <h2>Church:</h2>
         
