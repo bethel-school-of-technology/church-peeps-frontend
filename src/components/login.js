@@ -153,7 +153,7 @@ class Login extends Component {
       <div className="wrapper">
         {/* <Redirect to="/profile" /> */}
         <header>
-         <h2>Welcome back, please login so you can connect with your Church Peeps.</h2>
+         <h2>ChurchPeeps Login</h2>
          </header>
         <div className="form-wrapper">
           {/* <h1>Profile for</h1> */}

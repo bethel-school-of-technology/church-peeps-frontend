@@ -52,7 +52,7 @@ class Peeps extends Component {
 
             <div key={index}>
 
-                <div className="wrapper">
+                <div className="wrapper" rows="4" cols="500">
                     <div className="ChurchPeeps">
                     <li>{user.firstName} {user.lastName}</li>
                     

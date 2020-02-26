@@ -5,7 +5,6 @@ import CreatePrayer from './CreatePrayer';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
-
 class Prayer extends Component {
     constructor(props) {
         super(props);
@@ -50,19 +49,21 @@ class Prayer extends Component {
         const users = this.state.prayer.map((prayer, index) => (
             <div key={index}>
                 <div className="wrapper">
-                    <div>
+                    <div className="request">
                         <li>{prayer.firstName} {prayer.lastName}'s prayer request is:  {prayer.description}</li>
                     </div>
-                    
+                     
                 </div>
             </div>
         ));
         return ( 
         <div>
             
-            {/* <h1>Your Church Peeps are here for you, please let us know how we can pray for you.</h1>                 */}
+            {/* <h1>Your Church Peeps are here for you, please let us know how we can pray for you.</h1>   
+              */}
+            <header>
             <h2 className="prayer">Prayer Requests</h2>
-           
+            </header>
             <div className="footer"> 
             
                 <Link to="/addprayer"><p>Add Prayer Request</p></Link>

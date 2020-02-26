@@ -185,10 +185,10 @@ onSubmit(e) {
     return (
       <div className="wrapper">
         <header>
-        <h2>New to Church Peeps?  Please create an account with us! Enjoy your experience with our app.</h2>
+        <h2>New to Church Peeps?  Please create an account with us! </h2>
         </header>
         <div className="form-wrapper">
-           <h1>Personal Info</h1>
+           {/* <h1>Personal Info</h1> */}
           <form onSubmit={this.handleSubmit} noValidate>
             <div className="firstName">
               <label htmlFor="firstName">First Name</label>
