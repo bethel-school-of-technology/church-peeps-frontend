@@ -8,7 +8,7 @@ export default class Home extends Component {
     return (
       <div>
         <h2>Welcome to Church Peeps. Please go to Signup and Create a Profile if new or to login if you aleady have a Profile. Enjoy your experience with our app.</h2>
-        {/* <img src="/images/ChurchPeeps.jpg" alt="logo" class="logo"></img> */}
+        {/* <img src="ChurchPeeps.jpg" alt="logo" height="42" width="42"></img> */}
        
           {/* <h2>Church:</h2>
         

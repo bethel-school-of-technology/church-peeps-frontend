@@ -100,17 +100,17 @@ class CreatePrayer extends Component {
     componentDidMount() {
 
         axios.get('/users')
-        .then(response => {
-            if (response.data.length > 0) {
-                this.setState({
-                    users: response.data.map(user => user.username),
-                })
-            }
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-        
+            .then(response => {
+                if (response.data.length > 0) {
+                    this.setState({
+                        users: response.data.map(user => user.username),
+                    })
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+
     }
 
 
@@ -154,48 +154,53 @@ class CreatePrayer extends Component {
 
             const { formErrors } = this.state;
             return (
-                <div>
-                    <h2>Create New Prayer Request</h2>
-                    <form onSubmit={this.handleSubmit} noValidate>
-                        <div className="form-group">
-                            <label htmlFor="firstName">First Name: </label>
-                            <input className={formErrors.firstName.length > 0 ? "error" : null}
-                                type="text" name="firstName" noValidate
-                                onChange={this.handleChange} />
-                            {formErrors.firstName.length > 0 && (
-                                <span className="errorMessage">{formErrors.firstName}</span>
-                            )}
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="lastName">Last Name: </label>
-                            <input className={formErrors.lastName.length > 0 ? "error" : null}
-                                type="text" name="lastName" noValidate onChange={this.onChange} />
-                            {formErrors.lastName.length > 0 && (
-                                <span className="errorMessage">{formErrors.lastName}</span>
-                            )}
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="description">Description: </label>
-
-                            <textarea
-                                className="form-control"
-                                noValidate onChange={this.handleChange} ></textarea>
-
-                        </div>
-                        <div className="form-group">
-                            <label>Date:</label>
-                            <div>
-                                <DatePicker
-                                    selected={this.state.date}
-                                    onChange={this.onChangeDate}
-                                />
+                <div className="wrapper">
+                    <header>
+                        <h2>Create New Prayer Request</h2>
+                    </header>
+                    <div className="form-wrapper">
+                        <form onSubmit={this.handleSubmit} noValidate>
+                            <div className="form-group">
+                                <label htmlFor="firstName">First Name: </label>
+                                <input className={formErrors.firstName.length > 0 ? "error" : null}
+                                    type="text" name="firstName" noValidate
+                                    onChange={this.handleChange} />
+                                {formErrors.firstName.length > 0 && (
+                                    <span className="errorMessage">{formErrors.firstName}</span>
+                                )}
                             </div>
-                        </div>
-                        <button type="submit">Share your prayer request</button>
-                    </form>
 
+                            <div className="form-group">
+                                <label htmlFor="lastName">Last Name: </label>
+                                <input className={formErrors.lastName.length > 0 ? "error" : null}
+                                    type="text" name="lastName" noValidate onChange={this.onChange} />
+                                {formErrors.lastName.length > 0 && (
+                                    <span className="errorMessage">{formErrors.lastName}</span>
+                                )}
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="description">Description: </label>
+
+                                <textarea
+                                    className="form-control"
+                                    rows="10" cols="100"
+                                    noValidate onChange={this.handleChange} ></textarea>
+
+                            </div>
+                            <div className="form-group">
+                                <label>Date:</label>
+                                <div>
+                                    <DatePicker
+                                        selected={this.state.date}
+                                        onChange={this.onChangeDate}
+                                    />
+                                </div>
+                            </div>
+                            <button type="submit">Share your prayer request</button>
+                        </form>
+                    </div>
                 </div>
+
             );
         } else {
             return (
