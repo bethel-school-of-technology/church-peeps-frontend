@@ -174,8 +174,8 @@ onSubmit(e) {
     }
     console.log();
 
-    // axios.post('/users/add', Signup)
-    // .then(res => console.log(res.data));
+    axios.post('/users/add', Signup)
+    .then(res => console.log(res.data));
    
 }
 
@@ -267,7 +267,7 @@ onSubmit(e) {
             </div>
 
             <div className="createAccount">
-              <button type="submit">Continue to Login page</button>
+              <button type="submit" className="btn btn-secondary center">Continue to Login page</button>
               <br></br>
               <small>Already Have an <a href="./login">Account?</a></small>
 

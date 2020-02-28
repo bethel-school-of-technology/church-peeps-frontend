@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../App';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Link } from "react-router-dom";
+// import images from "./images";
 
 export default class Home extends Component {
   render() {
