@@ -138,8 +138,15 @@ class CreatePrayer extends Component {
     }
     
 
-    //         onSubmit(e) {
-    //     e.preventDefault();
+            onSubmit(e) {
+        e.preventDefault();
+        // prayer: this.state.prayer
+    }
+
+    // console.log();
+
+
+            
     handleSubmit = e => {
         e.preventDefault();
         const prayer = {
@@ -148,9 +155,9 @@ class CreatePrayer extends Component {
           description: this.state.description,
           date: this.state.date
         }
-        let prayer1 = JSON.stringify(prayer);
-        console.log(prayer1);
-          axios.post('/prayer/add', prayer1)
+        // let prayer1 = JSON.stringify(prayer);
+        // console.log(prayer1);
+          axios.post('/prayer/add', prayer)
             .then(res => {
             if (res.status === 200) {
               console.log("Prayer created!");
@@ -162,12 +169,7 @@ class CreatePrayer extends Component {
             alert("Something is wrong.")
           });
       }
-    //         prayer: this.state.prayer
-    //     }
-
-    //     console.log();
-
-    // }
+   
 
     render() {
         var documentCookie = document.cookie;
