@@ -180,7 +180,7 @@ class Login extends Component {
               )}
             </div>
             <div className="login">
-            <button type="submit">Login</button>
+            <button type="submit" className="btn btn-secondary center">Login</button>
             </div>
           </form>
         </div>

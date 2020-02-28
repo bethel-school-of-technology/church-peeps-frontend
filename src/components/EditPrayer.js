@@ -78,7 +78,7 @@ export default class EditPrayer extends Component {
 
     console.log(prayer);
 
-    axios.put("/prayer/update" + this.props.match.params.id, prayer)
+    axios.put("/prayer/update", prayer)
     .then(res => {
       console.log(res);
     this.props.history.push('/prayer');

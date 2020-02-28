@@ -3,17 +3,19 @@ import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import "../App"
+import { waitForDomChange } from "@testing-library/react";
+
 
 
 const formValid = ({ formErrors, ...rest }) => {
     let valid = true;
 
-    //validate form errors are empty
+    //validate form errors are empty
     Object.values(formErrors).forEach(val => {
         val.length > 0 && (valid = false);
     });
 
-    //validate form was completed
+    //validate form was completed
     Object.values(rest).forEach(val => {
         val == null && (valid = false);
     });
@@ -41,38 +43,38 @@ class CreatePrayer extends Component {
         };
     }
 
-    handleSubmit = e => {
-        e.preventDefault();
+    // handleSubmit = e => {
+    //     e.preventDefault();
 
-        const prayer = {
+    //     const prayer = {
 
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            description: this.state.description,
-            date: this.state.date
-        }
+    //         firstName: this.state.firstName,
+    //         lastName: this.state.lastName,
+    //         description: this.state.description,
+    //         date: this.state.date
+    //     }
         // let prayer1 = JSON.stringify(prayer);
         // axios.post('/prayer/add', prayer1, {
         //     headers: {
         //         "Content-Type": "application/json"
         //     }
         // });
-        axios.post('/prayer/add', prayer)
-            .then(res => {
-                if (res.status === 200) {
-                    console.log("Prayer created!");
-                    this.props.history.push('/prayer');
-                }
-            })
-            .catch(err => {
-                console.log(err);
-                alert("Something is wrong.")
-            });
-        if (formValid(this.state.formErrors)) {
-        } else {
-            console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
-        }
-    };
+    //     axios.post('/prayer/add', prayer)
+    //         .then(res => {
+    //             if (res.status === 200) {
+    //                 console.log("Prayer created!");
+    //                 this.props.history.push('/prayer');
+    //             }
+    //         })
+    //         .catch(err => {
+    //             console.log(err);
+    //             alert("Something is wrong.")
+    //         });
+    //     if (formValid(this.state.formErrors)) {
+    //     } else {
+    //         console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
+    //     }
+    // };
 
     handleChange = e => {
         e.preventDefault();
@@ -126,7 +128,7 @@ class CreatePrayer extends Component {
     }
     onChangedescription(description) {
         this.setState({
-            description: description
+            description: description.target.value
         })
     }
     onChangedate(date) {
@@ -134,17 +136,38 @@ class CreatePrayer extends Component {
             date: date
         })
     }
+    
 
-    onSubmit(e) {
+    //         onSubmit(e) {
+    //     e.preventDefault();
+    handleSubmit = e => {
         e.preventDefault();
-
         const prayer = {
-            prayer: this.state.prayer
+          firstName: this.state.firstName,
+          lastName: this.state.lastName,
+          description: this.state.description,
+          date: this.state.date
         }
+        let prayer1 = JSON.stringify(prayer);
+        console.log(prayer1);
+          axios.post('/prayer/add', prayer1)
+            .then(res => {
+            if (res.status === 200) {
+              console.log("Prayer created!");
+              this.props.history.push('/prayer');
+            }
+          })
+            .catch(err => {
+            console.log(err);
+            alert("Something is wrong.")
+          });
+      }
+    //         prayer: this.state.prayer
+    //     }
 
-        console.log();
+    //     console.log();
 
-    }
+    // }
 
     render() {
         var documentCookie = document.cookie;
@@ -173,16 +196,16 @@ class CreatePrayer extends Component {
                             <div className="form-group">
                                 <label htmlFor="lastName">Last Name: </label>
                                 <input className={formErrors.lastName.length > 0 ? "error" : null}
-                                    type="text" name="lastName" noValidate onChange={this.onChange} />
+                                    type="text" name="lastName" noValidate 
+                                    onChange={this.handleChange} />
                                 {formErrors.lastName.length > 0 && (
                                     <span className="errorMessage">{formErrors.lastName}</span>
                                 )}
                             </div>
                             <div className="form-group">
                                 <label htmlFor="description">Description: </label>
-
-                                <textarea
-                                    className="form-control"
+                                <textarea className="Description" 
+                                type="text" name="description"                   
                                     rows="10" cols="100"
                                     noValidate onChange={this.handleChange} ></textarea>
 

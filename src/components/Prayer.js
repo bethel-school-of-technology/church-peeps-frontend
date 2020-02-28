@@ -42,10 +42,10 @@ class Prayer extends Component {
     }
     render() {
 
-        console.log(this.setState.prayer);
-        if (this.state.prayer.length === 0) {
-            return <div><h2>Failed to fetch prayer requests</h2></div>;
-        }
+        // console.log(this.setState.prayer);
+        // if (this.state.prayer.length === 0) {
+        //     return <div><h2>Failed to fetch prayer requests</h2></div>;
+        // }
         const users = this.state.prayer.map((prayer, index) => (
             <div key={index}>
                 <div className="wrapper">
