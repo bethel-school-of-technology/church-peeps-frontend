@@ -9,10 +9,11 @@ export default class Nav extends Component {
       color: "beige"      
     };
     return (
+    
       <nav>
         <ul className="nav-links">
-        <Link style={navStyle} to="/"><h4>Home</h4></Link>
-  
+        <Link style={navStyle} to="/"><h4 className="home">Home</h4></Link>
+    
             <li>
               <Link style={navStyle} to="/signup">Signup</Link>
             </li>

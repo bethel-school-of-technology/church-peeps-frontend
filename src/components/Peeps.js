@@ -54,8 +54,8 @@ class Peeps extends Component {
 
                 <div className="wrapper" rows="4" cols="500">
                     <div className="ChurchPeeps">
-                    <li>{user.firstName} {user.lastName}</li>
-                    
+                        <li>{user.firstName} {user.lastName}</li>
+
                     </div>
                 </div>
             </div>
@@ -63,13 +63,15 @@ class Peeps extends Component {
         return (
             <div>
                 <header>
-            <h2>Your Church Peeps</h2>
-            </header>
-            <div className="footer">
-                <p>We love our ChurchPeeps</p>
+                    <h2>
+                        <img src={require("./images/faviconicon.jpg")} width="50"></img>
+                        Your Church Peeps</h2>
+                </header>
+                <div className="footer">
+                    <p>We love our ChurchPeeps</p>
+                </div>
+                <div className="peeps">{users}</div>
             </div>
-        <div>{users}</div>
-        </div>
         )
 
     }

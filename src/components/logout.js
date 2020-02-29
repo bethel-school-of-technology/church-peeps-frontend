@@ -7,15 +7,17 @@ export default class Logout extends Component {
     onSubmit(e) {
         e.preventDefault();
         axios.post("/users/logout")
-        .then(res => console.log(res));
+            .then(res => console.log(res));
     }
 
     render() {
         return (
             <div className="logout">
-               <h2>You are now logged out.</h2>
+                <h2>
+                    <img src={require("./images/faviconicon.jpg")} width="50"></img>
+                    You are now logged out.</h2>
 
-               <Link to="/login"><h6>Log back in?</h6></Link>
+                <Link to="/login"><h6>Log back in?</h6></Link>
             </div>
         );
     }

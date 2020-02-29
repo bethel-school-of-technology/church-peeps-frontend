@@ -5,94 +5,35 @@
 }
 
 nav {
-  text-align: center;
-  background: rgba(47, 51, 66, 0.884);
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  position: absolute;
-    /* display: flex; */
-  /* justify-content: space-around; */
-  /* align-items: stretch; */
-  /* min-height: 10vh; */
-  /* background: rgba(47, 51, 66, 0.884); */
-  /* color: white; */
-  /* margin: 2em;  */
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  min-height: 10vh;
+  background: rgba(46, 48, 58, 0.884);
+  color: white;
+  margin: 2em;
 }
-h1 {
-  text-align: center;
-  width: 100%;
-  color: beige;
-  font-weight: lighter;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+
+h4, h6 {
+  margin: 16px;
+  justify-items: flex-start;
   
 }
 
-h5, h2 {
-  position: absolute;
-  width: 100%;
-  color: whitesmoke;
-  font-weight: bold;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  display: flex;
-  justify-content: space-around;
-  min-height: 5vh;
-  background: rgba(105, 107, 114, 0.884);
-  margin: 1em;
-  top: 80px; 
-  text-align: center;
-  /* padding: 10px; */
-
-}
-
-/* h3 {
-  background-color: rgb(209, 209, 221);
-  border: 2px solid rgb(16, 33, 65);
-  width: 25%;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  padding: 5px 0px;
-  font-size: 1em;
-  font-weight: lighter;
-  letter-spacing: 1px;
-  margin-bottom: 0.25em;
-}
-
-h3:hover {
-  color: rgb(8, 63, 100);
-  background-color: white;
-  border: 2px solid rgb(0, 0, 0);
-} */
-
-h4, h6 {
-  text-align: center;
-  width: 100%;
-  color: beige;
-  font-weight: lighter;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  margin: 16px;
-  justify-items: flex-start;
-  position: relative;
-}
-
 .nav-links {
-  position: relative;
   display: flex;
   justify-content: space-around;
   margin: 10px;
-  padding: 10px;
   list-style: none;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 li {
-  color: beige;
   display: flex;
   justify-content: space-around;
   margin: 10px;
   padding: 10px;
-  position: relative;
 }
 
 .container {
@@ -100,7 +41,6 @@ li {
   padding: 10px;
   justify-self: right;
   font-family: fantasy;
-  position: relative;
 }
 
 .user, .pass, .login, .em, .first, .last, .form-group {
@@ -110,7 +50,6 @@ li {
   justify-content: center;
   font-family: fantasy;
   font-weight: bold;
-  position: relative;
 }
 
 .firstName, .lastName, .email, .username, .password, .form-control {
@@ -120,7 +59,6 @@ li {
   background-color: rgb(16, 33, 65);
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: beige;
-  position: relative;
 }
 .date {
   background-color: rgb(16, 33, 65);
@@ -131,9 +69,7 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* top: 80px; */
-  position: relative;
-  text-align: center;
+
 }
 
 .form-wrapper {
@@ -142,9 +78,6 @@ li {
   padding: 20px 40px;
   border-radius: 10px;
   box-shadow: 0pc 10px 50;
-  position: relative;
-  text-align: center;
-  top: 180px;
 }
 
 .profileInfo {
@@ -165,18 +98,105 @@ li {
 body {
   display: flex;
    background-image: url("./components/images/nebraska.JPG");
-   /* background-image: url("./components/images/ChurchPeeps.jpg"); */
    background-repeat: no-repeat;
    background-attachment: fixed;
    background-size: 100% 100%;
-   text-align: center;
 }
 
 .home-header {
   font-family: fantasy;
 }
 
+h1, h6 {
+  text-align: center;
+  width: 100%;
+  color: beige;
+  font-weight: lighter;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+h4 {
+  text-align: center;
+  width: 100%;
+  color: rgb(8, 8, 7);
+  font-weight: lighter;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.home {
+  color: whitesmoke;
+}
 
+div.transbox {
+  margin: 30px;
+  background-color: #ffffff;
+  /* border: 1px solid black; */
+  opacity: 0.6;
+}
+div.transbox div {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #000000;
+}
+
+p.transbox {
+  margin: 50px;
+  background-color: #ffffff;
+  /* border: 1px solid black; */
+  opacity: 0.5;
+}
+
+p.transbox p {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #000000;
+}
+
+div.peeps {
+  color: rgb(13, 13, 14);
+  font-weight: bold;
+  font-size: 1.5em;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+h5 {
+  color: whitesmoke;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  display: flex;
+  justify-content: space-around;
+  min-height: 5vh;
+  background: rgba(105, 107, 114, 0.884);
+  margin: 1em 2em;
+}
+h2 {
+  color: whitesmoke;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  /* display: flex; */
+  min-height: 5vh;
+  margin: 1em 2em;
+  letter-spacing: 1px;
+}
+
+h3 {
+  background-color: rgb(209, 209, 221);
+  border: 2px solid rgb(16, 33, 65);
+  width: 25%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 5px 0px;
+  font-size: 1em;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  margin-bottom: 0.25em;
+}
+
+h3:hover {
+  color: rgb(8, 63, 100);
+  background-color: white;
+  border: 2px solid rgb(0, 0, 0);
+}
 
 input {
   margin: 10px;
@@ -214,6 +234,7 @@ small {
   color: black;
   font-size: 1.5em;
 }
+
 .footer {
   background: rgba(47, 51, 66, 0.884);
   position: fixed;
@@ -224,60 +245,3 @@ small {
   font-size: 1em;
   color: beige;
 }
-.ChurchPeeps {
-  top: 150px; 
-  text-align: center;
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 40px;
-  width: 100%;
-  color: beige;
-  /* display: flex; */
-  justify-content: center;
-  /* margin: 100px; */
-  /* padding: 0px; */
-  /* position: relative; */
-  /* content: ""; */
-  /* overflow: auto; */
-  /* clear: both; */
-  /* display: table; */
-  /* box-sizing: border-box; */
-  /* float: right; */
-  /* padding-left: 50%; */
-  /* padding-right: 600px; */
-  /* right: ; */
-  /* left: 100%; */
-  /* align-items: center; */
-  /* text-align: center;
-  text-justify: center; */
-  /* padding: 100px; */
-  /* margin-left: 500px;
-  margin-right: 500px; */
-  /* height: 200px; */
-}
-.logo {
-  position: center;
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: auto;
-}
-.logo::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-.request {
-  top: 150px; 
-  text-align: center;
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 20px;
-  width: 100%;
-  color: beige;
-  display: flex;
-  justify-content: stretch;
-}
-
