@@ -23,7 +23,7 @@ class Login extends Component {
   constructor(props) {
     super(props);
 
-    
+
     this.state = {
       username: "",
       password: "",
@@ -40,7 +40,7 @@ class Login extends Component {
       [name]: value
     });
   };
-  
+
   handleSubmit = e => {
     e.preventDefault();
 
@@ -52,7 +52,7 @@ class Login extends Component {
     // axios.post('/users/login', login1, {headers: {
     //   "Content-Type": "application/json"
     // }}).then(() => {
- 
+
     // });
 
     axios.post("/users/login", login)
@@ -78,9 +78,9 @@ class Login extends Component {
       });
   };
 
-    
 
-    
+
+
   handleChange = e => {
     e.preventDefault();
     const { name, value } = e.target;
@@ -108,7 +108,7 @@ class Login extends Component {
       console.log(this.state));
   };
   componentDidMount() {
-     axios.get('/users')
+    axios.get('/users')
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
@@ -140,21 +140,23 @@ class Login extends Component {
     console.log(Login);
 
     axios.post('/users/login', Login)
-    .then(res => console.res.data);
+      .then(res => console.res.data);
 
   }
 
   render() {
     const { formErrors } = this.state;
-  //   if (this.setState.users.length === 0) {
-  //     return <Redirect to="/profile" />
-  // }
+    //   if (this.setState.users.length === 0) {
+    //     return <Redirect to="/profile" />
+    // }
     return (
       <div className="wrapper">
         {/* <Redirect to="/profile" /> */}
         <header>
-         <h2>ChurchPeeps Login</h2>
-         </header>
+          <h2>
+            <img src={require("./images/faviconicon.jpg")} width="50"></img>
+            ChurchPeeps Login</h2>
+        </header>
         <div className="form-wrapper">
           {/* <h1>Profile for</h1> */}
           <form onSubmit={this.handleSubmit}
@@ -180,7 +182,7 @@ class Login extends Component {
               )}
             </div>
             <div className="login">
-            <button type="submit" className="btn btn-secondary center">Login</button>
+              <button type="submit" className="btn btn-secondary center">Login</button>
             </div>
           </form>
         </div>

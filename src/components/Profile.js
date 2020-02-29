@@ -12,18 +12,18 @@ export default class Profile extends Component {
     constructor(props) {
         super(props);
         this.deletePrayer = this.deletePrayer.bind(this);
-        this.state = {prayer: [] };
+        this.state = { prayer: [] };
     }
 
     componentDidMount() {
         console.log(process.env);
         axios.get("/prayer/")
-        .then(response => {
-            this.setState({ prayer: response.data });
-        })
-        .catch(err => {
-            console.log(err);
-        });
+            .then(response => {
+                this.setState({ prayer: response.data });
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }
 
     deletePrayer(id) {
@@ -38,28 +38,27 @@ export default class Profile extends Component {
         return this.state.prayer.map(currentprayer => {
             return (
                 <Prayer
-                prayer={currentprayer}
-                deletePrayer={this.deletePrayer}
-                key={currentprayer._id}
+                    prayer={currentprayer}
+                    deletePrayer={this.deletePrayer}
+                    key={currentprayer._id}
                 />
             );
         });
     }
 
-    render () {
+    render() {
         return (
             <div>
-                    <h2>Welcome to your profile.  Here you can upload your image, edit or delete your contact information, and update or delete your prayer requests. </h2>
-                    <div >
-                <p>Prayer Requests | <Link to="/addprayer" >Create your prayer</Link> | <Link to="/editprayer">Edit your prayer</Link></p>
-                </div>
-                {/* <p>{this.prayerList()}</p> */}
+                <h2>        
+                    <img src={require("./images/faviconicon.jpg")} height="50"></img>
+                    Welcome to your profile.  Here you can upload your image, edit or delete your contact information, and update or delete your prayer requests. </h2>
+                
                 <div className="footer">
-                    <Link to="/logout">Logout</Link>
+                    <p> <Link to="/addprayer" >Create your prayer</Link> | <Link to="/editprayer">Edit your prayer</Link> | <Link to="/logout">Logout</Link></p>
+                </div>
+                <Route path="/logout" component={Logout} />
             </div>
-            <Route path="/logout" component={Logout} />
-            </div>
-            
+
         );
     }
 }

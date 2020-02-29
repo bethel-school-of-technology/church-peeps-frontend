@@ -53,12 +53,12 @@ class CreatePrayer extends Component {
     //         description: this.state.description,
     //         date: this.state.date
     //     }
-        // let prayer1 = JSON.stringify(prayer);
-        // axios.post('/prayer/add', prayer1, {
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     }
-        // });
+    // let prayer1 = JSON.stringify(prayer);
+    // axios.post('/prayer/add', prayer1, {
+    //     headers: {
+    //         "Content-Type": "application/json"
+    //     }
+    // });
     //     axios.post('/prayer/add', prayer)
     //         .then(res => {
     //             if (res.status === 200) {
@@ -136,9 +136,9 @@ class CreatePrayer extends Component {
             date: date
         })
     }
-    
 
-            onSubmit(e) {
+
+    onSubmit(e) {
         e.preventDefault();
         // prayer: this.state.prayer
     }
@@ -146,30 +146,30 @@ class CreatePrayer extends Component {
     // console.log();
 
 
-            
+
     handleSubmit = e => {
         e.preventDefault();
         const prayer = {
-          firstName: this.state.firstName,
-          lastName: this.state.lastName,
-          description: this.state.description,
-          date: this.state.date
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            description: this.state.description,
+            date: this.state.date
         }
         // let prayer1 = JSON.stringify(prayer);
         // console.log(prayer1);
-          axios.post('/prayer/add', prayer)
+        axios.post('/prayer/add', prayer)
             .then(res => {
-            if (res.status === 200) {
-              console.log("Prayer created!");
-              this.props.history.push('/prayer');
-            }
-          })
+                if (res.status === 200) {
+                    console.log("Prayer created!");
+                    this.props.history.push('/prayer');
+                }
+            })
             .catch(err => {
-            console.log(err);
-            alert("Something is wrong.")
-          });
-      }
-   
+                console.log(err);
+                alert("Something is wrong.")
+            });
+    }
+
 
     render() {
         var documentCookie = document.cookie;
@@ -181,12 +181,14 @@ class CreatePrayer extends Component {
             return (
                 <div className="wrapper">
                     <header>
-                        <h2>Create New Prayer Request</h2>
+                        <h2>
+                            <img src={require("./images/faviconicon.jpg")} width="50"></img>
+                            Create New Prayer Request</h2>
                     </header>
                     <div className="form-wrapper">
                         <form onSubmit={this.handleSubmit} noValidate>
                             <div className="form-group">
-                                <label htmlFor="firstName">First Name: </label>
+                                <label htmlFor="firstName">First Name: </label><br></br>
                                 <input className={formErrors.firstName.length > 0 ? "error" : null}
                                     type="text" name="firstName" noValidate
                                     onChange={this.handleChange} />
@@ -196,19 +198,19 @@ class CreatePrayer extends Component {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="lastName">Last Name: </label>
+                                <label htmlFor="lastName">Last Name: </label><br></br>
                                 <input className={formErrors.lastName.length > 0 ? "error" : null}
-                                    type="text" name="lastName" noValidate 
+                                    type="text" name="lastName" noValidate
                                     onChange={this.handleChange} />
                                 {formErrors.lastName.length > 0 && (
                                     <span className="errorMessage">{formErrors.lastName}</span>
                                 )}
                             </div>
                             <div className="form-group">
-                                <label htmlFor="description">Description: </label>
-                                <textarea className="Description" 
-                                type="text" name="description"                   
-                                    rows="10" cols="100"
+                                <label htmlFor="description">Description: </label><br></br>
+                                <textarea className="Description"
+                                    type="text" name="description"
+                                    rows="5" cols="50"
                                     noValidate onChange={this.handleChange} ></textarea>
 
                             </div>

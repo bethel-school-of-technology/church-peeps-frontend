@@ -46,25 +46,25 @@ class Signup extends Component {
     e.preventDefault();
 
     const user = {
-     
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
-        email: this.state.email,
-        username: this.state.username,
-        password: this.state.password
+
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      username: this.state.username,
+      password: this.state.password
     }
 
     axios.post("/users/add", user)
-    .then(res => {
-      if (res.status === 200) {
-        console.log('User created');
-        this.props.history.push("/login");
-      }
-    })
-    .catch(err => alert('User already exists. Please try again.'));
-   
+      .then(res => {
+        if (res.status === 200) {
+          console.log('User created');
+          this.props.history.push("/login");
+        }
+      })
+      .catch(err => alert('User already exists. Please try again.'));
+
     if (formValid(this.state.formErrors)) {
-   
+
     } else {
       console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
     }
@@ -122,62 +122,62 @@ class Signup extends Component {
 
   componentDidMount() {
     axios.get('/users')
-    .then(response => {
+      .then(response => {
         if (response.data.length > 0) {
-            this.setState({
-                users: response.data.map(user => user.username),
-            })
+          this.setState({
+            users: response.data.map(user => user.username),
+          })
         }
-    })
-    .catch((error) => {
+      })
+      .catch((error) => {
         console.log(error);
-    })
-    
-}
+      })
 
-onChangefirstName(e) {
-    this.setState({
-        firstName: e.target.value
-    })
-}
-onChangelastName(e) {
-    this.setState({
-        lastName: e.target.value
-    })
-}
-onChangeemail(e) {
-    this.setState({
-        email: e.target.value
-    })
-}
-onChangeusername(e) {
-  this.setState({
-    username: e.target.value
-  })
-}
-onChangepassword(e) {
-  this.setState({
-    password: e.target.value
-  })
-}
-onChangedate(date) {
-    this.setState({
-        date: date
-    })
-}
+  }
 
-onSubmit(e) {
+  onChangefirstName(e) {
+    this.setState({
+      firstName: e.target.value
+    })
+  }
+  onChangelastName(e) {
+    this.setState({
+      lastName: e.target.value
+    })
+  }
+  onChangeemail(e) {
+    this.setState({
+      email: e.target.value
+    })
+  }
+  onChangeusername(e) {
+    this.setState({
+      username: e.target.value
+    })
+  }
+  onChangepassword(e) {
+    this.setState({
+      password: e.target.value
+    })
+  }
+  onChangedate(date) {
+    this.setState({
+      date: date
+    })
+  }
+
+  onSubmit(e) {
     e.preventDefault();
-    
+
     const Signup = {
-        Signup: this.state.Signup
+      Signup: this.state.Signup
     }
     console.log();
 
     axios.post('/users/add', Signup)
-    .then(res => console.log(res.data));
-   
-}
+      .then(res => console.log(res.data));
+
+  }
 
 
   render() {
@@ -185,10 +185,13 @@ onSubmit(e) {
     return (
       <div className="wrapper">
         <header>
-        <h2>New to Church Peeps?  Please create an account with us! </h2>
+
+          <h2>
+            <img src={require("./images/faviconicon.jpg")} height="50"></img>
+            New to Church Peeps?  Please create an account with us!
+ </h2>
         </header>
         <div className="form-wrapper">
-           {/* <h1>Personal Info</h1> */}
           <form onSubmit={this.handleSubmit} noValidate>
             <div className="firstName">
               <label htmlFor="firstName">First Name</label>

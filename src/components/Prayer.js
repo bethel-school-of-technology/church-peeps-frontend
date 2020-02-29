@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import CreatePrayer from './CreatePrayer';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import ChurchPeeps from './images/ChurchPeeps.jpg';
 
 class Prayer extends Component {
     constructor(props) {
@@ -48,30 +49,30 @@ class Prayer extends Component {
         // }
         const users = this.state.prayer.map((prayer, index) => (
             <div key={index}>
-                <div className="wrapper">
-                    <div className="request">
-                        <li>{prayer.firstName} {prayer.lastName}'s prayer request is:  {prayer.description}</li>
+                <div className="background">
+                    <div className="transbox">
+                        <div>{prayer.firstName} {prayer.lastName}'s prayer request:  {prayer.description}</div>
                     </div>
-                     
+
                 </div>
             </div>
         ));
-        return ( 
-        <div>
-            
-            {/* <h1>Your Church Peeps are here for you, please let us know how we can pray for you.</h1>   
+        return (
+            <div>
+
+                {/* <h1>Your Church Peeps are here for you, please let us know how we can pray for you.</h1>   
               */}
-            <header>
-            <h2 className="prayer">Prayer Requests</h2>
-            </header>
-            <div className="footer"> 
-            
-                <Link to="/addprayer"><p>Add Prayer Request</p></Link>
-         
-            <Route path="/addprayer" component={CreatePrayer} />
+                <header>
+                    <h2 className="prayer">
+                        <img src={require("./images/faviconicon.jpg")} width="50"></img>
+                        Prayer Requests</h2>
+                </header>
+             
+                <div className="prayers">{users}</div>
+                <div className="footer">
+                    <h6>We are praying for you.</h6>
+                </div>
             </div>
-             <div>{users}</div>
-        </div>
         )
     }
 
