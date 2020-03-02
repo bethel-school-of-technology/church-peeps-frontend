@@ -147,6 +147,7 @@ class Login extends Component {
           <h2>
             <img src={require("./images/faviconicon.jpg")} alt="logo" width="50"></img>
             ChurchPeeps Login</h2>
+            <h6>Then we will no longer be immature like children. We won’t be tossed and blown about by every wind of new teaching. We will not be influenced when people try to trick us with lies so clever they sound like the truth. Instead, we will speak the truth in love, growing in every way more and more like Christ, who is the head of his body, the church.He makes the whole body fit together perfectly. As each part does its own special work, it helps the other parts grow, so that the whole body is healthy and growing and full of love. Ephesians 4:14-16 NLT</h6>
         </header>
         <div className="form-wrapper">
           <form onSubmit={this.handleSubmit}

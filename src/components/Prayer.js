@@ -56,6 +56,7 @@ class Prayer extends Component {
                     <h2 className="prayer">
                         <img src={require("./images/faviconicon.jpg")} alt="logo" width="50"></img>
                         Prayer Requests</h2>
+                        <h6>Don’t be pulled in different directions or worried about a thing. Be saturated in prayer throughout each day, offering your faith-filled requests before God with overflowing gratitude. Tell him every detail of your life, 7 then God’s wonderful peace that transcends human understanding, will make the answers known to you through Jesus Christ.[a] 8 So keep your thoughts continually fixed on all that is authentic and real, honorable and admirable, beautiful and respectful, pure and holy, merciful and kind. And fasten your thoughts on every glorious work of God,[b] praising him always. Philippians 4:6-8</h6>
                 </header>
              
                 <div className="prayers">{users}</div>

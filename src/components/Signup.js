@@ -190,6 +190,7 @@ class Signup extends Component {
             <img src={require("./images/faviconicon.jpg")} alt="logo" height="50"></img>
             New to Church Peeps?  Please create an account with us!
  </h2>
+ <h6>For his “body” has been formed in his image and is closely joined together and constantly connected as one. And every member has been given divine gifts to contribute to the growth of all; and as these gifts operate effectively throughout the whole body, we are built up and made perfect in love. Ephesians 4:16</h6>
         </header>
         <div className="form-wrapper">
           <form onSubmit={this.handleSubmit} noValidate>

@@ -147,6 +147,7 @@ class CreatePrayer extends Component {
                         <h2>
                             <img src={require("./images/faviconicon.jpg")} alt="logo" width="50"></img>
                             Create New Prayer Request</h2>
+                            <h6>This is the reason I urge you to boldly believe for whatever you ask for in prayer—believe that you have received it and it will be yours. 25 And whenever you stand praying,[a] if you find that you carry something in your heart against another person, release him and forgive him[b] so that your Father in heaven will also release you and forgive you of your faults. 26 But if you will not release forgiveness, don’t expect your Father in heaven to release you from your misdeeds.  Mark 11:24-26</h6>
                     </header>
                     <div className="form-wrapper">
                         <form onSubmit={this.handleSubmit} noValidate>
