@@ -63,6 +63,7 @@ class Peeps extends Component {
                     <h2>
                         <img src={require("./images/faviconicon.jpg")} alt="logo" width="50"></img>
                         Your Church Peeps</h2>
+                        <h6>This is not the time to pull away and neglect[a] meeting together, as some have formed the habit of doing, because we need each other! In fact, we should come together even more frequently, eager to encourage and urge each other onward as we anticipate that day dawning. Hebrews 10:25</h6>
                 </header>
                 <div className="footer">
                     <p>We love our ChurchPeeps</p>
