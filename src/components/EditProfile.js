@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from "react";
 import axios from 'axios'
-// import "./App.css";
 
 class EditProfile extends Component {
     constructor(props) {
@@ -52,10 +51,7 @@ class EditProfile extends Component {
         console.log(profile);
 
         axios.put('/profile/admin/add', profile)
-        .then(res => console.log(res.data));
-
-        // window.location = '/Home'
-       
+        .then(res => console.log(res.data));       
     }
 
     render() {
@@ -79,21 +75,3 @@ class EditProfile extends Component {
 }
 
 export default EditProfile;
-
-
-// export default class EditProfile extends Component {
-
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-
-//         };
-//     }
-//     render() {
-//         return (
-//             <div>
-//             <h3>Update Profile</h3>
-//             </div>
-//         )
-//     }
-// }

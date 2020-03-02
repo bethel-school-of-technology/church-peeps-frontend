@@ -14,7 +14,7 @@ export default class Logout extends Component {
         return (
             <div className="logout">
                 <h2>
-                    <img src={require("./images/faviconicon.jpg")} width="50"></img>
+                    <img src={require("./images/faviconicon.jpg")} alt="logo" width="50"></img>
                     You are now logged out.</h2>
 
                 <Link to="/login"><h6>Log back in?</h6></Link>
