@@ -10,12 +10,9 @@ import Prayer from './components/Prayer';
 import Login from './components/login';
 import Signup from './components/Signup';
 import Profile from './components/Profile';
-import CreateChurch from './components/CreateChurch';
 import CreatePrayer from './components/CreatePrayer';
-import EditChurch from './components/EditChurch';
 import EditPrayer from './components/EditPrayer';
 import EditProfile from './components/EditProfile';
-// import UserAdmin from './components/UserAdmin';
 import PrayerAdmin from './components/PrayerAdmin';
 import Logout from './components/logout';
 
@@ -35,18 +32,11 @@ function App () {
           <Route path="/profile" component={Profile} />
           <Route path="/editprofile" component={EditProfile} />
           
-          {/* <Route path="/users/admin/update/:id" component={UserAdmin} /> */}
-
           <Route path="/prayer" component={Prayer} />
           <Route path="/editprayer" component={EditPrayer} />
           <Route path="/addprayer" component={CreatePrayer} />
           
           <Route path="/prayer/admin/update/:id" component={PrayerAdmin} />
-
-
-          {/* <Route path="/church" component={Church} /> */}
-          <Route path="/church/update" component={EditChurch} />
-          <Route path="/addchurch" component={CreateChurch} />
 
         </Switch>
       </div>

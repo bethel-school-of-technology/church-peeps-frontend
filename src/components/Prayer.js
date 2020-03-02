@@ -1,10 +1,6 @@
 import "../App";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import React, { Component } from "react";
-import CreatePrayer from './CreatePrayer';
-import { Link } from "react-router-dom";
 import axios from 'axios';
-import ChurchPeeps from './images/ChurchPeeps.jpg';
 
 class Prayer extends Component {
     constructor(props) {
@@ -43,10 +39,6 @@ class Prayer extends Component {
     }
     render() {
 
-        // console.log(this.setState.prayer);
-        // if (this.state.prayer.length === 0) {
-        //     return <div><h2>Failed to fetch prayer requests</h2></div>;
-        // }
         const users = this.state.prayer.map((prayer, index) => (
             <div key={index}>
                 <div className="background">
@@ -60,11 +52,9 @@ class Prayer extends Component {
         return (
             <div>
 
-                {/* <h1>Your Church Peeps are here for you, please let us know how we can pray for you.</h1>   
-              */}
                 <header>
                     <h2 className="prayer">
-                        <img src={require("./images/faviconicon.jpg")} width="50"></img>
+                        <img src={require("./images/faviconicon.jpg")} alt="logo" width="50"></img>
                         Prayer Requests</h2>
                 </header>
              

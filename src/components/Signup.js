@@ -187,7 +187,7 @@ class Signup extends Component {
         <header>
 
           <h2>
-            <img src={require("./images/faviconicon.jpg")} height="50"></img>
+            <img src={require("./images/faviconicon.jpg")} alt="logo" height="50"></img>
             New to Church Peeps?  Please create an account with us!
  </h2>
         </header>

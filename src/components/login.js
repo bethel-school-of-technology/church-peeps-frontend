@@ -48,12 +48,6 @@ class Login extends Component {
       username: this.state.username,
       password: this.state.password
     }
-    // let login1=JSON.stringify(login);
-    // axios.post('/users/login', login1, {headers: {
-    //   "Content-Type": "application/json"
-    // }}).then(() => {
-
-    // });
 
     axios.post("/users/login", login)
       .then(response => {
@@ -146,19 +140,15 @@ class Login extends Component {
 
   render() {
     const { formErrors } = this.state;
-    //   if (this.setState.users.length === 0) {
-    //     return <Redirect to="/profile" />
-    // }
+
     return (
       <div className="wrapper">
-        {/* <Redirect to="/profile" /> */}
         <header>
           <h2>
-            <img src={require("./images/faviconicon.jpg")} width="50"></img>
+            <img src={require("./images/faviconicon.jpg")} alt="logo" width="50"></img>
             ChurchPeeps Login</h2>
         </header>
         <div className="form-wrapper">
-          {/* <h1>Profile for</h1> */}
           <form onSubmit={this.handleSubmit}
             noValidate>
             <div className="username">

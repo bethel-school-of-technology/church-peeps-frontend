@@ -1,7 +1,5 @@
 import "../App";
 import axios from "axios";
-import { tsPropertySignature } from "@babel/types";
-import PropTypes from "prop-types";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from "react";
 
@@ -43,7 +41,6 @@ class Peeps extends Component {
     }
     render() {
 
-        // console.log(this.setState.users);
         if (this.state.users.length === 0) {
             return <div><h2>Failed to fetch users</h2></div>;
         }
@@ -64,7 +61,7 @@ class Peeps extends Component {
             <div>
                 <header>
                     <h2>
-                        <img src={require("./images/faviconicon.jpg")} width="50"></img>
+                        <img src={require("./images/faviconicon.jpg")} alt="logo" width="50"></img>
                         Your Church Peeps</h2>
                 </header>
                 <div className="footer">

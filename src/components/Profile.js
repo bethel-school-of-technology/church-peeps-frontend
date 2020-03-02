@@ -4,8 +4,7 @@ import React, { Component } from "react";
 import axios from 'axios';
 import Prayer from "./Prayer";
 import { Link } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-// import Image from "./image";
+import { BrowserRouter as Route } from 'react-router-dom';
 import Logout from "./logout";
 
 export default class Profile extends Component {
@@ -50,7 +49,7 @@ export default class Profile extends Component {
         return (
             <div>
                 <h2>        
-                    <img src={require("./images/faviconicon.jpg")} height="50"></img>
+                    <img src={require("./images/faviconicon.jpg")} alt="logo" height="50"></img>
                     Welcome to your profile.  Here you can upload your image, edit or delete your contact information, and update or delete your prayer requests. </h2>
                 
                 <div className="footer">

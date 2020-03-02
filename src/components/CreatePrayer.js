@@ -3,9 +3,6 @@ import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import "../App"
-import { waitForDomChange } from "@testing-library/react";
-
-
 
 const formValid = ({ formErrors, ...rest }) => {
     let valid = true;
@@ -43,46 +40,10 @@ class CreatePrayer extends Component {
         };
     }
 
-    // handleSubmit = e => {
-    //     e.preventDefault();
-
-    //     const prayer = {
-
-    //         firstName: this.state.firstName,
-    //         lastName: this.state.lastName,
-    //         description: this.state.description,
-    //         date: this.state.date
-    //     }
-    // let prayer1 = JSON.stringify(prayer);
-    // axios.post('/prayer/add', prayer1, {
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     }
-    // });
-    //     axios.post('/prayer/add', prayer)
-    //         .then(res => {
-    //             if (res.status === 200) {
-    //                 console.log("Prayer created!");
-    //                 this.props.history.push('/prayer');
-    //             }
-    //         })
-    //         .catch(err => {
-    //             console.log(err);
-    //             alert("Something is wrong.")
-    //         });
-    //     if (formValid(this.state.formErrors)) {
-    //     } else {
-    //         console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
-    //     }
-    // };
-
     handleChange = e => {
         e.preventDefault();
         const { name, value } = e.target;
         let formErrors = this.state;
-
-        // console.log("name: ", prayer);
-        // console.log("value: ", value);
 
         switch (name) {
             case "firstName":
@@ -140,10 +101,8 @@ class CreatePrayer extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        // prayer: this.state.prayer
     }
 
-    // console.log();
 
 
 
@@ -155,8 +114,7 @@ class CreatePrayer extends Component {
             description: this.state.description,
             date: this.state.date
         }
-        // let prayer1 = JSON.stringify(prayer);
-        // console.log(prayer1);
+      
         axios.post('/prayer/add', prayer)
             .then(res => {
                 if (res.status === 200) {
@@ -166,7 +124,12 @@ class CreatePrayer extends Component {
             })
             .catch(err => {
                 console.log(err);
-                alert("Something is wrong.")
+                alert("Something is wrong.");
+                if (formValid(this.state.formErrors)) {
+
+                } else {
+                    console.err("FORM INVALID - DISPLAY ERROR MESSAGE");
+                }
             });
     }
 
@@ -182,7 +145,7 @@ class CreatePrayer extends Component {
                 <div className="wrapper">
                     <header>
                         <h2>
-                            <img src={require("./images/faviconicon.jpg")} width="50"></img>
+                            <img src={require("./images/faviconicon.jpg")} alt="logo" width="50"></img>
                             Create New Prayer Request</h2>
                     </header>
                     <div className="form-wrapper">
